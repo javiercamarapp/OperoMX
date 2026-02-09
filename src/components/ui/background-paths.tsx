@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Typewriter } from "@/components/ui/typewriter-text";
 import { Star } from "lucide-react";
+import motoImage from "@/assets/moto.png";
 
 function FloatingPaths({ position }: { position: number }) {
   const paths = Array.from({ length: 36 }, (_, i) => ({
@@ -111,6 +112,22 @@ export function BackgroundPaths() {
             >
               Más información
             </Button>
+          </div>
+
+          {/* Animated Motorcycle */}
+          <div className="relative w-full overflow-hidden mb-10">
+            <motion.img
+              src={motoImage}
+              alt="Moto de reparto"
+              className="h-16 md:h-20 w-auto"
+              initial={{ x: "-100%" }}
+              animate={{ x: "100vw" }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            />
           </div>
 
           {/* Stats */}
