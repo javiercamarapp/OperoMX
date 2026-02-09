@@ -1,4 +1,6 @@
 import { BlurredStagger } from "@/components/ui/blurred-stagger-text";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
 export function GuaranteeSection() {
   return (
@@ -20,6 +22,22 @@ export function GuaranteeSection() {
           text="Sin penalizaciones. Sin letras chiquitas. Solo resultados reales."
           className="text-xl md:text-2xl lg:text-3xl font-semibold text-foreground"
         />
+
+        <motion.div
+          initial={{ opacity: 0, y: 20, scale: 0.9 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5, duration: 0.5, type: "spring", stiffness: 150 }}
+        >
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Button className="mt-4 bg-hero-accent hover:bg-hero-accent/90 text-white font-bold text-lg md:text-xl px-10 md:px-14 h-14 md:h-16 rounded-2xl shadow-lg shadow-hero-accent/30">
+              Quiero comenzar ahora
+            </Button>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
