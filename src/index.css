@@ -53,6 +53,11 @@ All colors MUST be HSL.
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --hero: 0 0% 0%;
+    --hero-foreground: 0 0% 100%;
+    --hero-accent: 8 100% 64%;
+    --hero-paths: 8 100% 64%;
   }
 
   .dark {
