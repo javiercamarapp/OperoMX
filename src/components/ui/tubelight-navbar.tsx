@@ -24,14 +24,20 @@ export function NavBar({ items, className }: NavBarProps) {
   const [isMobile, setIsMobile] = useState(false)
   const [isOverOrange, setIsOverOrange] = useState(false)
 
+  const logoRef = React.useRef<HTMLImageElement>(null)
+
   const checkOverlap = useCallback(() => {
     const orangeSections = document.querySelectorAll("[data-bg-accent]")
-    const navY = 60 // approximate vertical center of navbar
+    const logoEl = logoRef.current
+    if (!logoEl) return
+
+    const logoRect = logoEl.getBoundingClientRect()
+    const logoCenterY = logoRect.top + logoRect.height / 2
 
     let over = false
     orangeSections.forEach((el) => {
       const rect = el.getBoundingClientRect()
-      if (rect.top <= navY && rect.bottom >= navY) {
+      if (rect.top <= logoCenterY && rect.bottom >= logoCenterY) {
         over = true
       }
     })
@@ -65,6 +71,7 @@ export function NavBar({ items, className }: NavBarProps) {
         {/* Logo */}
         <Link to="/" className="flex-shrink-0">
           <img
+            ref={logoRef}
             src={logo}
             alt="Logo"
             className={cn(
