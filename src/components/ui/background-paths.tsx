@@ -139,7 +139,7 @@ export function BackgroundPaths() {
           initial={{ x: "-50%" }}
           animate={{ x: "0%" }}
           transition={{
-            duration: 10,
+            duration: 3,
             repeat: Infinity,
             ease: "linear",
           }}
