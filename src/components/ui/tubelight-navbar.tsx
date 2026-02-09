@@ -74,7 +74,7 @@ export function NavBar({ items, className }: NavBarProps) {
         {/* Centered Navigation Menu */}
         <div
           className={cn(
-            "flex items-center gap-2 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg transition-all duration-300",
+            "flex items-center gap-0.5 md:gap-2 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg transition-all duration-300",
             "bg-white border border-border/40"
           )}
         >
@@ -88,14 +88,14 @@ export function NavBar({ items, className }: NavBarProps) {
                 to={item.url}
                 onClick={() => setActiveTab(item.name)}
                 className={cn(
-                  "relative cursor-pointer text-sm font-semibold px-4 md:px-6 py-2 rounded-full transition-colors",
+                  "relative cursor-pointer text-sm font-semibold px-2.5 md:px-6 py-1.5 md:py-2 rounded-full transition-colors",
                   "text-foreground/80 hover:text-hero-accent",
                   isActive && "bg-hero-accent/10 text-hero-accent"
                 )}
               >
                 <span className="hidden md:inline">{item.name}</span>
                 <span className="md:hidden">
-                  <Icon size={18} strokeWidth={2.5} />
+                  <Icon size={16} strokeWidth={2.5} />
                 </span>
                 {isActive && (
                   <motion.div
