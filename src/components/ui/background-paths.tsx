@@ -135,20 +135,30 @@ export function BackgroundPaths() {
       {/* Animated Motorcycles - Full Width */}
       <div className="relative z-10 w-screen overflow-hidden h-16 md:h-20 flex items-center mb-8">
         <motion.div
-          className="flex items-center gap-24 md:gap-40"
-          initial={{ x: "-40%" }}
-          animate={{ x: "100vw" }}
+          className="flex items-center gap-16 md:gap-28"
+          initial={{ x: "0%" }}
+          animate={{ x: "-50%" }}
           transition={{
-            duration: 8,
+            duration: 10,
             repeat: Infinity,
             ease: "linear",
           }}
         >
-          <img src={motoImage} alt="Moto 1" className="h-12 md:h-16 w-auto" />
-          <img src={motoImage} alt="Moto 2" className="h-12 md:h-16 w-auto" />
-          <img src={motoImage} alt="Moto 3" className="h-12 md:h-16 w-auto" />
-          <img src={motoImage} alt="Moto 4" className="h-12 md:h-16 w-auto" />
-          <img src={motoImage} alt="Moto 5" className="h-12 md:h-16 w-auto" />
+          {/* Duplicamos las motos para crear loop infinito sin espacios */}
+          <img src={motoImage} alt="Moto" className="h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-12 md:h-16 w-auto" />
         </motion.div>
       </div>
     </div>
