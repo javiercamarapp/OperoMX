@@ -117,8 +117,8 @@ function SpiralBackground() {
   }, []);
 
   return (
-    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-      <div ref={spiralRef} className="w-[560px] h-[560px] md:w-[800px] md:h-[800px]" />
+    <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-25">
+      <div ref={spiralRef} className="w-[500px] h-[500px] md:w-[700px] md:h-[700px] lg:w-[900px] lg:h-[900px]" />
     </div>
   );
 }
