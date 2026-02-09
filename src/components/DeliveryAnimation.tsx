@@ -4,15 +4,15 @@ import motoImage from "@/assets/moto.png";
 
 export function DeliveryAnimation() {
   return (
-    <div className="relative w-full h-40 mt-8">
+    <div className="relative w-full h-56 mt-8">
       {/* Road line */}
       <div className="absolute bottom-6 left-0 right-0 h-0.5 bg-muted-foreground/30" />
 
       {/* Store icon - fixed position on the right */}
-      <div className="absolute right-0 bottom-4">
+      <div className="absolute right-0 bottom-6">
         <div className="relative">
-          <div className="w-14 h-14 rounded-lg bg-hero-accent/10 flex items-center justify-center border-2 border-hero-accent">
-            <Store className="w-7 h-7 text-hero-accent" />
+          <div className="w-20 h-20 rounded-xl bg-hero-accent/10 flex items-center justify-center border-2 border-hero-accent">
+            <Store className="w-10 h-10 text-hero-accent" />
           </div>
           {/* Pulse effect */}
           <motion.div
@@ -32,9 +32,9 @@ export function DeliveryAnimation() {
 
       {/* Motorcycle animation - ida y vuelta */}
       <motion.div
-        className="absolute bottom-8 left-0"
+        className="absolute bottom-10 left-0"
         animate={{
-          left: ["0%", "calc(100% - 160px)", "0%"],
+          left: ["0%", "calc(100% - 200px)", "0%"],
         }}
         transition={{
           duration: 4,
@@ -45,7 +45,7 @@ export function DeliveryAnimation() {
         <motion.img
           src={motoImage}
           alt="Moto de delivery"
-          className="w-24 h-auto origin-center"
+          className="w-40 h-auto origin-center"
           animate={{ 
             y: [0, -2, 0],
             scaleX: [1, 1, -1, -1, 1],
