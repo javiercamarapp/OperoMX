@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { Input } from "@/components/ui/input";
+import { Slider } from "@/components/ui/slider";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
@@ -7,10 +8,10 @@ const COSTO_OPERO = 55;
 const MEMBRESIA = 2000;
 
 export function CalculatorSection() {
-  const [entregas, setEntregas] = useState("");
+  const [entregas, setEntregas] = useState(100);
   const [precio, setPrecio] = useState("");
 
-  const numEntregas = Number(entregas) || 0;
+  const numEntregas = entregas;
   const numPrecio = Number(precio) || 0;
   const showResult = numEntregas > 0 && numPrecio > 0;
 
@@ -49,13 +50,23 @@ export function CalculatorSection() {
               </span>
               Entregas por mes
             </label>
-            <Input
-              type="number"
-              placeholder="Ej. 200"
-              value={entregas}
-              onChange={(e) => setEntregas(e.target.value)}
-              className="h-14 text-lg rounded-xl border-border bg-muted/30 focus:ring-hero-accent focus:border-hero-accent"
-            />
+            <div className="flex items-center gap-4">
+              <Slider
+                value={[entregas]}
+                onValueChange={(val) => setEntregas(val[0])}
+                min={10}
+                max={1000}
+                step={10}
+                className="flex-1 [&_[role=slider]]:bg-hero-accent [&_[role=slider]]:border-hero-accent [&_[data-orientation=horizontal]>[data-orientation=horizontal]]:bg-hero-accent"
+              />
+              <span className="min-w-[60px] text-center text-xl font-bold text-hero-accent bg-hero-accent/10 rounded-lg px-3 py-2">
+                {entregas}
+              </span>
+            </div>
+            <div className="flex justify-between text-xs text-muted-foreground mt-1">
+              <span>10</span>
+              <span>1,000</span>
+            </div>
           </div>
 
           {/* Precio por envío */}
