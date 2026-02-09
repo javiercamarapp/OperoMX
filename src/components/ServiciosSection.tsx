@@ -1,5 +1,6 @@
 import { ContainerScroll, CardSticky } from "@/components/ui/cards-stack"
 import { AnimatedText } from "@/components/ui/animated-underline-text-one"
+import { DeliveryAnimation } from "@/components/DeliveryAnimation"
 
 const SERVICIOS = [
   {
@@ -75,6 +76,9 @@ export function ServiciosSection() {
               Nuestra plataforma está diseñada para que gestiones tus envíos con total 
               tranquilidad, visibilidad y eficiencia. Sin complicaciones, sin improvisaciones.
             </p>
+            
+            {/* Delivery Animation */}
+            <DeliveryAnimation />
           </div>
 
           {/* Right Column - Stacking Cards */}
