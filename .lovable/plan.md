@@ -1,14 +1,14 @@
 
-## Fix: Cards overlapping with sticky header on mobile
+## Eliminar espacios vacíos en móvil
 
-**Problem**: On mobile, the stacking cards collide with the sticky header area (title, subtitle, and delivery animation) because `baseTopMobile` is set to 280px, which isn't enough to clear all the sticky content.
+El gran espacio blanco que se ve después de las tarjetas es causado por un div espaciador al final de la sección de servicios. Este espaciador (`h-[60vh] lg:h-[80vh]`) era necesario cuando el header era sticky en móvil para que las tarjetas pudieran apilarse correctamente, pero ahora que el header ya no es sticky en móvil, ese espacio sobra.
 
-**Solution**: Increase the `baseTopMobile` value in `CardSticky` so the cards begin stacking below the full sticky header (including the animation).
+### Cambio a realizar
 
-### Technical details
+**Archivo:** `src/components/ServiciosSection.tsx`
 
-**File: `src/components/ServiciosSection.tsx`**
-- Change `baseTopMobile` from `280` to `340` on the `CardSticky` component. This pushes the card stacking start point further down, clearing the title, subtitle, and motorcycle animation completely.
-- Reduce `incrementY` on mobile or keep it at 20 to ensure cards don't stack too far down the screen.
+- Cambiar el espaciador para que solo aplique en desktop (donde sí se necesita porque el header es sticky)
+- En móvil, reducirlo a `h-0` o eliminarlo por completo
+- Clase actualizada: `hidden lg:block lg:h-[80vh]`
 
-This is a single-line change — just updating the `baseTopMobile` prop value.
+Esto eliminará el espacio blanco vacío en móvil mientras mantiene el comportamiento correcto de las tarjetas apiladas en desktop.
