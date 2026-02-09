@@ -94,7 +94,7 @@ export function BackgroundPaths() {
           </div>
 
           {/* Subtitle */}
-          <p className="text-sm sm:text-base md:text-lg text-hero-foreground/60 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-2">
+          <p className="text-base sm:text-base md:text-lg text-hero-foreground/60 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-2">
             Centraliza, controla y escala tus envíos diarios desde un solo lugar, con visibilidad total y una operación diseñada para crecer contigo.
           </p>
 
