@@ -1,81 +1,102 @@
-import { motion } from "framer-motion";
-import { Zap, Truck, MapPin, BarChart3, LucideIcon } from "lucide-react";
+import { ContainerScroll, CardSticky } from "@/components/ui/cards-stack"
 
-interface ServicioCard {
-  icon: LucideIcon;
-  title: string;
-  description: string;
-}
-
-const servicios: ServicioCard[] = [
+const SERVICIOS = [
   {
-    icon: Zap,
-    title: "Logística de Despacho Inmediato",
+    id: "servicio-1",
+    title: "Centralización total",
     description:
-      "Garantizamos la integridad de sus productos mediante tiempos de respuesta optimizados y una gestión de última milla de alta velocidad.",
+      "Gestiona todos tus envíos diarios desde una sola plataforma. Olvídate de llamadas, mensajes y coordinación manual.",
   },
   {
-    icon: Truck,
-    title: "Disponibilidad de Flota Flexible",
+    id: "servicio-2",
+    title: "Operación confiable y constante",
     description:
-      "Garantizamos la cobertura total en periodos de alta demanda mediante una red extensa de conductores, asegurando la continuidad de su servicio sin interrupciones.",
+      "Accede a una red de repartidores verificados, disponibles cuando tu negocio los necesita, todos los días.",
   },
   {
-    icon: MapPin,
-    title: "Monitoreo Logístico en Tiempo Real",
+    id: "servicio-3",
+    title: "Visibilidad en tiempo real",
     description:
-      "Transparencia operativa mediante sistemas de geolocalización avanzada, permitiendo el seguimiento preciso de cada unidad desde el origen hasta el destino final.",
+      "Sabe dónde está cada pedido, quién lo entrega y en qué estado se encuentra, en todo momento.",
   },
   {
-    icon: BarChart3,
-    title: "Gestión Contable y Auditoría",
+    id: "servicio-4",
+    title: "Menos errores, más eficiencia",
     description:
-      "Reportes financieros detallados y conciliación automatizada de pedidos, brindando una visión clara y estructurada de la rentabilidad de su canal digital.",
+      "Reduce retrasos, confusiones y reprocesos con flujos claros y seguimiento automático.",
   },
-];
+  {
+    id: "servicio-5",
+    title: "Escala sin complicaciones",
+    description:
+      "Crece tu volumen de entregas sin aumentar tu carga operativa ni depender de improvisaciones.",
+  },
+  {
+    id: "servicio-6",
+    title: "Diseñado para negocios reales",
+    description:
+      "Ideal para restaurantes, dark kitchens, farmacias y comercios con envíos diarios.",
+  },
+  {
+    id: "servicio-7",
+    title: "Experiencia profesional para tus clientes",
+    description:
+      "Entregas más rápidas, ordenadas y confiables que elevan la percepción de tu marca.",
+  },
+  {
+    id: "servicio-8",
+    title: "Infraestructura, no solo repartos",
+    description:
+      "Opero Express no es mensajería: es la base operativa de tu logística diaria.",
+  },
+]
 
 export function ServiciosSection() {
   return (
-    <section className="py-24 px-4 md:px-6 bg-white">
-      <div className="max-w-6xl mx-auto">
-        {/* Heading */}
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-bold text-center tracking-tight text-hero-foreground mb-16"
-        >
-          Servicios
-        </motion.h2>
+    <section className="bg-background py-16 md:py-24">
+      <div className="container mx-auto px-4">
+        <ContainerScroll className="gap-4">
+          {/* Header */}
+          <div className="mb-12 md:mb-16 max-w-3xl">
+            <p className="text-hero-accent font-semibold text-sm uppercase tracking-wider mb-4">
+              nuestros servicios
+            </p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+              Todo tu reparto,{" "}
+              <span className="text-hero-accent">bajo control</span>
+            </h2>
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+              Nuestra plataforma está diseñada para que gestiones tus envíos con total 
+              tranquilidad, visibilidad y eficiencia. Sin complicaciones, sin improvisaciones.
+            </p>
+          </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {servicios.map((servicio, index) => {
-            const Icon = servicio.icon;
-            return (
-              <motion.div
-                key={servicio.title}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group rounded-2xl border border-slate-100 bg-white p-8 shadow-sm hover:shadow-md transition-shadow duration-300"
+          {/* Cards */}
+          <div className="flex flex-col gap-4">
+            {SERVICIOS.map((servicio, index) => (
+              <CardSticky
+                key={servicio.id}
+                index={index}
+                incrementY={15}
+                incrementZ={10}
+                className="rounded-2xl border border-border bg-card p-6 md:p-8 shadow-lg"
               >
-                <div className="mb-5 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-[#FF5B48]/10">
-                  <Icon className="w-6 h-6 text-[#FF5B48]" />
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground">
+                    {servicio.title}
+                  </h3>
+                  <span className="text-4xl md:text-5xl font-bold text-hero-accent/20">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                 </div>
-                <h3 className="text-xl font-bold text-hero-foreground mb-3">
-                  {servicio.title}
-                </h3>
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-2xl">
                   {servicio.description}
                 </p>
-              </motion.div>
-            );
-          })}
-        </div>
+              </CardSticky>
+            ))}
+          </div>
+        </ContainerScroll>
       </div>
     </section>
-  );
+  )
 }
