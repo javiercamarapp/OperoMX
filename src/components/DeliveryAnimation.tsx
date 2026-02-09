@@ -4,7 +4,7 @@ import motoImage from "@/assets/moto.png";
 
 export function DeliveryAnimation() {
   return (
-    <div className="relative w-full h-44 mt-4">
+    <div className="relative w-full h-44 mt-2">
       {/* Road line */}
       <div className="absolute bottom-6 left-0 right-0 h-0.5 bg-muted-foreground/30" />
 
