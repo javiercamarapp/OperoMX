@@ -22,8 +22,8 @@ const TextRevealByWord: FC<TextRevealByWordProps> = ({
   const words = text.split(" ");
 
   return (
-    <div ref={targetRef} className={cn("relative z-0 h-[100vh]", className)}>
-      <div className="sticky top-0 mx-auto flex h-[100vh] max-w-4xl items-center bg-transparent px-4">
+    <div ref={targetRef} className={cn("relative z-0 h-[200vh]", className)}>
+      <div className="sticky top-0 mx-auto flex h-screen max-w-4xl items-center bg-transparent px-6 py-10">
         <p ref={targetRef} className="flex flex-wrap text-2xl font-bold text-white/20 md:text-3xl lg:text-4xl xl:text-5xl">
           {words.map((word, i) => {
             const start = i / words.length;
