@@ -75,10 +75,10 @@ export function BackgroundPaths() {
           </div>
 
           {/* Main Heading - Two lines on mobile */}
-          <div className="min-h-[140px] sm:min-h-[80px] md:min-h-[100px] lg:min-h-[120px] mb-4 sm:mb-6">
-            <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-hero-foreground">
+          <div className="h-[140px] sm:h-auto sm:min-h-[80px] md:min-h-[100px] lg:min-h-[120px] mb-4 sm:mb-6 overflow-hidden flex flex-col justify-center">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-hero-foreground">
               <span className="block sm:inline">Tu reparto sin</span>{" "}
-              <span className="text-hero-accent block sm:inline">
+              <span className="text-hero-accent block sm:inline min-w-[280px] sm:min-w-0 text-center sm:text-left">
                 <Typewriter
                   text={["complicaciones", "retrasos", "preocupaciones"]}
                   speed={80}
