@@ -77,18 +77,17 @@ export function BackgroundPaths() {
 
           <div
             className="inline-block group relative p-px rounded-2xl backdrop-blur-lg 
-            overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300
-            bg-gradient-to-b from-hero-accent/20 to-hero-foreground/10"
+            overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
             <Button
               variant="ghost"
               className="rounded-[1.15rem] px-8 py-6 text-lg font-semibold backdrop-blur-md 
-              bg-hero/95 hover:bg-hero/100 text-hero-foreground transition-all duration-300 
-              group-hover:-translate-y-0.5 border border-hero-foreground/10
+              bg-hero-accent hover:bg-hero-accent/90 text-white transition-all duration-300 
+              group-hover:-translate-y-0.5 border-none
               hover:shadow-md"
             >
               <span className="opacity-90 group-hover:opacity-100 transition-opacity">
-                Descubre más
+                Empezar ahora
               </span>
               <span
                 className="ml-3 opacity-70 group-hover:opacity-100 group-hover:translate-x-1.5 
