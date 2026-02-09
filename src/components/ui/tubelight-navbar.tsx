@@ -78,9 +78,7 @@ export function NavBar({ items, className }: NavBarProps) {
         <div
           className={cn(
             "flex items-center gap-2 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg transition-all duration-300",
-            isOverOrange
-              ? "bg-white/15 border border-white/30"
-              : "bg-background/5 border border-border/40"
+            "bg-white border border-border/40"
           )}
         >
           {items.map((item) => {
