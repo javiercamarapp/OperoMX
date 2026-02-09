@@ -81,7 +81,7 @@ export function ContactSection() {
               animate={{ rotate: [0, -10, 10, -10, 0] }}
               transition={{ repeat: Infinity, repeatDelay: 2, duration: 0.5 }}
             >
-              <img src={whatsappIcon} alt="WhatsApp" className="w-5 h-5 md:w-6 md:h-6" />
+              <img src={whatsappIcon} alt="WhatsApp" className="w-5 h-5 md:w-6 md:h-6 brightness-0 invert" />
             </motion.div>
             Escríbenos por WhatsApp
           </motion.a>
