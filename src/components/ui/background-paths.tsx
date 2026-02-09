@@ -74,7 +74,7 @@ export function BackgroundPaths() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold mb-8 tracking-tighter text-hero-foreground">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 tracking-tighter text-hero-foreground whitespace-nowrap">
             Tu reparto sin{" "}
             <span className="text-hero-accent">
               <Typewriter
@@ -135,16 +135,22 @@ export function BackgroundPaths() {
       {/* Animated Motorcycles - Full Width */}
       <div className="relative z-10 w-screen overflow-hidden h-16 md:h-20 flex items-center mb-8">
         <motion.div
-          className="flex items-center gap-16 md:gap-28"
+          className="flex items-center gap-12 md:gap-20"
           initial={{ x: "0%" }}
           animate={{ x: "50%" }}
           transition={{
-            duration: 6,
+            duration: 12,
             repeat: Infinity,
             ease: "linear",
           }}
         >
-          {/* Duplicamos las motos para crear loop infinito sin espacios */}
+          {/* Motos suficientes para cubrir todo el ancho sin espacios */}
+          <img src={motoImage} alt="Moto" className="h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-12 md:h-16 w-auto" />
           <img src={motoImage} alt="Moto" className="h-12 md:h-16 w-auto" />
           <img src={motoImage} alt="Moto" className="h-12 md:h-16 w-auto" />
           <img src={motoImage} alt="Moto" className="h-12 md:h-16 w-auto" />
