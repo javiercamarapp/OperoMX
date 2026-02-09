@@ -66,7 +66,7 @@ function SpiralBackground() {
     const MAX_R = CENTER - 4 - DOT;
     const DURATION = 3;
     // Use hero-accent orange color
-    const COLOR = "hsl(11, 80%, 62%)";
+    const COLOR = "hsl(0, 94%, 65%)";
 
     const svgNS = "http://www.w3.org/2000/svg";
     const svg = document.createElementNS(svgNS, "svg");
