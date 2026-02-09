@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { Store } from "lucide-react";
 import motoImage from "@/assets/moto.png";
+import localImage from "@/assets/local-comercial.png";
 export function DeliveryAnimation() {
   return <div className="relative w-full h-44 mt-2">
       {/* Road line */}
@@ -9,9 +9,7 @@ export function DeliveryAnimation() {
       {/* Store icon - fixed position on the right */}
       <div className="absolute right-0 bottom-6">
         <div className="relative">
-          <div className="w-20 h-20 rounded-xl bg-hero-accent/10 flex items-center justify-center border-2 border-hero-accent">
-            <Store className="w-10 h-10 text-hero-accent" />
-          </div>
+          <img src={localImage} alt="Local comercial" className="w-20 h-20 object-contain" />
           {/* Pulse effect */}
           <motion.div className="absolute inset-0 rounded-lg border-2 border-hero-accent" animate={{
           scale: [1, 1.3, 1],
