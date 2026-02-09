@@ -65,7 +65,7 @@ export function BackgroundPaths() {
         >
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold mb-8 tracking-tighter text-hero-foreground">
             <Typewriter
-              text="Tu reparto sin complicaciones y sin atrasos"
+              text="Tu reparto sin complicaciones"
               speed={80}
               cursor="|"
               loop={false}
