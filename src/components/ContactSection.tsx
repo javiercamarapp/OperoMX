@@ -6,7 +6,7 @@ const contactCards = [
     title: "Email",
     description: "Nuestro equipo responde en tiempo real.",
     value: "contacto@opero.mx",
-    href: "mailto:contacto@opero.mx",
+    shortValue: "contacto@\nopero.mx",
   },
   {
     icon: MapPin,
@@ -37,20 +37,20 @@ export function ContactSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-3 md:grid-cols-3 gap-2 md:gap-8">
+        <div className="grid grid-cols-3 md:grid-cols-3 gap-1 md:gap-8">
           {contactCards.map((card) => (
             <div
               key={card.title}
-              className="flex flex-col items-center text-center p-2 md:p-6 rounded-xl md:rounded-2xl bg-white/10 hover:bg-white/20 transition-colors"
+              className="flex flex-col items-center text-center p-1.5 md:p-6 rounded-lg md:rounded-2xl bg-white/10 hover:bg-white/20 transition-colors overflow-hidden"
             >
-              <div className="w-8 h-8 md:w-14 md:h-14 rounded-full bg-white/20 flex items-center justify-center mb-1 md:mb-4">
-                <card.icon className="w-4 h-4 md:w-6 md:h-6 text-white" />
+              <div className="w-7 h-7 md:w-14 md:h-14 rounded-full bg-white/20 flex items-center justify-center mb-1 md:mb-4">
+                <card.icon className="w-3.5 h-3.5 md:w-6 md:h-6 text-white" />
               </div>
-              <h3 className="text-xs md:text-lg font-semibold text-white mb-0.5 md:mb-1">{card.title}</h3>
-              <p className="text-[10px] md:text-sm text-white/60 mb-1 md:mb-3 hidden md:block">{card.description}</p>
+              <h3 className="text-[10px] md:text-lg font-semibold text-white mb-0.5 md:mb-1">{card.title}</h3>
+              <p className="text-[9px] md:text-sm text-white/60 mb-1 md:mb-3 hidden md:block">{card.description}</p>
               <a
                 href={card.href}
-                className="text-[10px] md:text-base text-white font-semibold hover:underline whitespace-nowrap"
+                className="text-[8px] md:text-base text-white font-semibold hover:underline text-center leading-tight"
               >
                 {card.value}
               </a>
