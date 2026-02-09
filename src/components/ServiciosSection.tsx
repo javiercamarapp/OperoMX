@@ -91,7 +91,7 @@ export function ServiciosSection() {
                 incrementY={20}
                 incrementYMobile={12}
                 incrementZ={10}
-                className="rounded-xl md:rounded-2xl border border-border bg-card p-3 md:p-8 shadow-lg"
+                className="rounded-xl md:rounded-2xl border border-border bg-card p-3 md:p-8 shadow-none lg:shadow-lg"
               >
                 <div className="flex items-start justify-between gap-2 md:gap-4 mb-1 md:mb-4">
                   <h3 className="text-base md:text-2xl font-bold text-foreground">
