@@ -5,6 +5,7 @@ import { OperoCtaSection } from "@/components/OperoCtaSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { ContactSection } from "@/components/ContactSection";
 import { FAQSection } from "@/components/FAQSection";
+import { Footer } from "@/components/ui/footer-section";
 import { Home, HelpCircle, DollarSign, MessageCircleQuestion, Mail } from "lucide-react";
 
 const navItems = [
@@ -36,6 +37,7 @@ const Index = () => {
       <div id="contacto">
         <ContactSection />
       </div>
+      <Footer />
     </>
   );
 };
