@@ -45,7 +45,7 @@ Pagas una tarifa fija y utilizas toda la plataforma de Opero sin compromisos a l
                   <div>
                     <h3 className="text-lg font-semibold text-white">Mensual</h3>
                     <div className="flex items-center gap-2 mt-1">
-                      <span className="text-sm text-white/50 line-through">$8.99</span>
+                      <span className="text-sm text-white/50 line-through">$2,500</span>
                       <Badge className="bg-white/20 text-white border-none text-xs">11% off</Badge>
                     </div>
                   </div>
