@@ -147,6 +147,8 @@ export function BackgroundPaths() {
           <img src={motoImage} alt="Moto 1" className="h-12 md:h-16 w-auto" />
           <img src={motoImage} alt="Moto 2" className="h-12 md:h-16 w-auto" />
           <img src={motoImage} alt="Moto 3" className="h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto 4" className="h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto 5" className="h-12 md:h-16 w-auto" />
         </motion.div>
       </div>
     </div>
