@@ -9,7 +9,7 @@ export function OperoCtaSection() {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "start 0.2"],
+    offset: ["start 0.8", "start 0.2"],
   });
 
   const text =
@@ -17,8 +17,8 @@ export function OperoCtaSection() {
   const words = text.split(" ");
 
   return (
-    <section ref={containerRef} className="relative px-4 md:px-8 lg:px-16 py-12 md:py-20 min-h-[120vh] md:min-h-0 flex items-start md:items-center">
-      <div data-bg-accent className="mx-auto max-w-6xl w-full bg-hero-accent rounded-3xl px-8 py-16 md:px-12 md:py-20 lg:px-16 lg:py-24 shadow-2xl sticky top-24 md:static">
+    <section ref={containerRef} className="relative px-4 md:px-8 lg:px-16 py-12 md:py-20">
+      <div data-bg-accent className="mx-auto max-w-6xl bg-hero-accent rounded-3xl px-8 py-16 md:px-12 md:py-20 lg:px-16 lg:py-24 shadow-2xl">
         <p className="mx-auto max-w-4xl flex flex-wrap text-2xl font-bold text-white/20 md:text-3xl lg:text-4xl xl:text-5xl leading-tight">
           {words.map((word, i) =>
             isMobile ? (
@@ -57,7 +57,7 @@ function ScrollWord({
   total: number;
 }) {
   const start = index / total;
-  const end = Math.min(start + 1.5 / total, 1);
+  const end = start + 1 / total;
   const opacity = useTransform(progress, [start, end], [0, 1]);
 
   return (
