@@ -99,9 +99,12 @@ Pagas una tarifa fija y utilizas toda la plataforma de Opero sin compromisos a l
           once: true
         }} transition={{
           delay: 0.3
-        }} className="mt-4 flex items-center justify-center gap-2 text-sm text-white/70">
-            <ShieldCheckIcon className="h-4 w-4" />
-            Acceso a todas las funcionalidades sin costes ocultos
+        }} className="mt-4 flex flex-col items-center justify-center gap-1 text-sm text-white/70 text-center">
+            <div className="flex items-center gap-2">
+              <ShieldCheckIcon className="h-4 w-4" />
+              Sin compromisos ni cargos por cancelación • Ajusta o cancela cuando lo necesites
+            </div>
+            <p className="text-xs text-white/50">Para conocer las tarifas vigentes, agenda una demo</p>
           </motion.div>
         </div>
       </div>
