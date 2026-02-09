@@ -5,6 +5,7 @@ import { OperoCtaSection } from "@/components/OperoCtaSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { PricingSection } from "@/components/PricingSection";
 import { IncludesSection } from "@/components/IncludesSection";
+import { CalculatorSection } from "@/components/CalculatorSection";
 import { ContactSection } from "@/components/ContactSection";
 import { FAQSection } from "@/components/FAQSection";
 import { Footer } from "@/components/ui/footer-section";
@@ -34,6 +35,7 @@ const Index = () => {
         <PricingSection />
       </div>
       <IncludesSection />
+      <CalculatorSection />
       <div id="faq">
         <FAQSection />
       </div>
