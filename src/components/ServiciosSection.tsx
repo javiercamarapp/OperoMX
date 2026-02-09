@@ -87,7 +87,7 @@ export function ServiciosSection() {
                 key={servicio.id}
                 index={index}
                 baseTop={220}
-                baseTopMobile={280}
+                baseTopMobile={340}
                 incrementY={20}
                 incrementZ={10}
                 className="rounded-2xl border border-border bg-card p-4 md:p-8 shadow-lg"
