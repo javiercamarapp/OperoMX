@@ -114,24 +114,8 @@ export function BackgroundPaths() {
             </Button>
           </div>
 
-          {/* Animated Motorcycle */}
-          <div className="relative w-full overflow-hidden mb-10">
-            <motion.img
-              src={motoImage}
-              alt="Moto de reparto"
-              className="h-16 md:h-20 w-auto"
-              initial={{ x: "-100%" }}
-              animate={{ x: "100vw" }}
-              transition={{
-                duration: 6,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            />
-          </div>
-
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 max-w-md mx-auto">
+          <div className="grid grid-cols-3 gap-8 max-w-md mx-auto mb-10">
             <div className="text-center">
               <p className="text-3xl md:text-4xl font-bold text-hero-foreground">1M+</p>
               <p className="text-hero-foreground/50 text-sm">Users</p>
@@ -144,6 +128,54 @@ export function BackgroundPaths() {
               <p className="text-3xl md:text-4xl font-bold text-hero-foreground">24/7</p>
               <p className="text-hero-foreground/50 text-sm">Support</p>
             </div>
+          </div>
+
+          {/* Animated Motorcycles */}
+          <div className="relative w-full overflow-hidden h-24 md:h-32">
+            {/* Moto 1 - Fast */}
+            <motion.img
+              src={motoImage}
+              alt="Moto de reparto 1"
+              className="absolute h-12 md:h-16 w-auto"
+              style={{ top: "0%" }}
+              initial={{ x: "-15%" }}
+              animate={{ x: "100vw" }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            />
+            {/* Moto 2 - Medium */}
+            <motion.img
+              src={motoImage}
+              alt="Moto de reparto 2"
+              className="absolute h-10 md:h-14 w-auto"
+              style={{ top: "35%" }}
+              initial={{ x: "-30%" }}
+              animate={{ x: "100vw" }}
+              transition={{
+                duration: 7,
+                repeat: Infinity,
+                ease: "linear",
+                delay: 1,
+              }}
+            />
+            {/* Moto 3 - Slow */}
+            <motion.img
+              src={motoImage}
+              alt="Moto de reparto 3"
+              className="absolute h-8 md:h-12 w-auto"
+              style={{ top: "70%" }}
+              initial={{ x: "-50%" }}
+              animate={{ x: "100vw" }}
+              transition={{
+                duration: 9,
+                repeat: Infinity,
+                ease: "linear",
+                delay: 2,
+              }}
+            />
           </div>
         </motion.div>
       </div>
