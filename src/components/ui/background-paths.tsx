@@ -120,7 +120,7 @@ export function BackgroundPaths() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-sm sm:max-w-md mx-auto mb-4 sm:mb-0">
+          <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-sm sm:max-w-md mx-auto mb-8 sm:mb-0">
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-hero-foreground">1M+</p>
               <p className="text-hero-foreground/50 text-xs sm:text-sm">Users</p>
