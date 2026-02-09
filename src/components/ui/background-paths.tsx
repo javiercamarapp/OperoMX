@@ -64,11 +64,14 @@ export function BackgroundPaths() {
           className="max-w-4xl mx-auto"
         >
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold mb-8 tracking-tighter text-hero-foreground">
+            Tu reparto sin{" "}
             <Typewriter
-              text="Tu reparto sin complicaciones"
+              text={["complicaciones", "retrasos", "preocupaciones"]}
               speed={80}
               cursor="|"
-              loop={false}
+              loop={true}
+              delay={2000}
+              deleteSpeed={40}
             />
           </h1>
 
