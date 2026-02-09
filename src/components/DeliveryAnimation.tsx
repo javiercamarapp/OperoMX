@@ -23,7 +23,7 @@ export function DeliveryAnimation() {
       </div>
 
       {/* Motorcycle animation - ida y vuelta */}
-      <motion.div className="absolute bottom-10 left-0" animate={{
+      <motion.div className="absolute bottom-16 left-0" animate={{
       left: ["0%", "calc(100% - 200px)", "0%"]
     }} transition={{
       duration: 4,
