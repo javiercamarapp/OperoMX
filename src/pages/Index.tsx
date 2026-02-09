@@ -4,12 +4,14 @@ import { ServiciosSection } from "@/components/ServiciosSection";
 import { OperoCtaSection } from "@/components/OperoCtaSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { ContactSection } from "@/components/ContactSection";
-import { Home, Truck, Users, Mail } from "lucide-react";
+import { Home, Cog, HelpCircle, DollarSign, MessageCircleQuestion, Mail } from "lucide-react";
 
 const navItems = [
   { name: "Inicio", url: "#", icon: Home },
-  { name: "Servicios", url: "#servicios", icon: Truck },
-  { name: "Cómo funciona", url: "#como-funciona", icon: Users },
+  { name: "Servicios", url: "#servicios", icon: Cog },
+  { name: "Cómo funciona", url: "#como-funciona", icon: HelpCircle },
+  { name: "Precio", url: "#precio", icon: DollarSign },
+  { name: "FAQ", url: "#faq", icon: MessageCircleQuestion },
   { name: "Contacto", url: "#contacto", icon: Mail },
 ];
 
