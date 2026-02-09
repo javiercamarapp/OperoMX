@@ -10,6 +10,7 @@ interface CardStickyProps extends HTMLMotionProps<"div"> {
   baseTop?: number
   baseTopMobile?: number
   incrementY?: number
+  incrementYMobile?: number
   incrementZ?: number
 }
 
@@ -36,6 +37,7 @@ const CardSticky = React.forwardRef<HTMLDivElement, CardStickyProps>(
       baseTop = 112,
       baseTopMobile,
       incrementY = 10,
+      incrementYMobile,
       incrementZ = 10,
       children,
       className,
@@ -55,8 +57,9 @@ const CardSticky = React.forwardRef<HTMLDivElement, CardStickyProps>(
       return () => window.removeEventListener("resize", handleResize)
     }, [])
     
-    const y = index * incrementY
-    const effectiveBaseTop = isMobile && baseTopMobile ? baseTopMobile : baseTop
+    const effectiveIncrement = isMobile && incrementYMobile != null ? incrementYMobile : incrementY
+    const y = index * effectiveIncrement
+    const effectiveBaseTop = isMobile && baseTopMobile != null ? baseTopMobile : baseTop
 
     return (
       <motion.div
