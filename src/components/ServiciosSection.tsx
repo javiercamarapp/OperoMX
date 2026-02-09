@@ -82,7 +82,7 @@ export function ServiciosSection() {
           </div>
 
           {/* Right Column - Stacking Cards */}
-          <ContainerScroll className="gap-4 lg:gap-0 mt-8 lg:mt-0">
+          <ContainerScroll className="gap-4 lg:gap-0 -mt-4 lg:mt-0">
             {SERVICIOS.map((servicio, index) => (
               <CardSticky
                 key={servicio.id}
