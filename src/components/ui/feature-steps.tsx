@@ -85,7 +85,7 @@ export function FeatureSteps({
           {/* Image - Right */}
           <div
             className={cn(
-              "order-1 md:order-2 relative overflow-hidden rounded-xl w-full",
+              "order-1 md:order-2 relative overflow-hidden rounded-xl w-3/5 mx-auto md:w-full",
               imageHeight
             )}
           >
