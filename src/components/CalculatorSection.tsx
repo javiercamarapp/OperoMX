@@ -37,15 +37,22 @@ export function CalculatorSection() {
 
   const result = useMemo(() => {
     if (!showResult) return null;
-    const diferenciaPorEnvio = numPrecio - COSTO_OPERO; // positivo = ganancia, negativo = subsidio
-    const totalEnvios = diferenciaPorEnvio * numEntregas; // ganancia o ahorro de envíos
-    const neto = totalEnvios - MEMBRESIA; // descontando membresía
-    const esGanancia = neto >= 0;
+    const diferenciaPorEnvio = numPrecio - COSTO_OPERO;
+    const gananciaEnvios = diferenciaPorEnvio * numEntregas;
+    const neto = gananciaEnvios - MEMBRESIA;
+    // 3 escenarios:
+    // 1. precio < 55: subsidia cada envío → costo = membresía + subsidio total
+    // 2. precio >= 55 pero neto < 0: gana por envío pero no cubre membresía → paga la diferencia
+    // 3. precio >= 55 y neto >= 0: ganancia neta real
+    const tipo: "subsidio" | "parcial" | "ganancia" =
+      diferenciaPorEnvio < 0 ? "subsidio" :
+      neto >= 0 ? "ganancia" : "parcial";
     return {
       diferenciaPorEnvio: Math.abs(diferenciaPorEnvio),
+      gananciaEnvios: Math.abs(gananciaEnvios),
       neto: Math.abs(neto),
       totalMensual: MEMBRESIA + Math.max(0, -diferenciaPorEnvio) * numEntregas,
-      esGanancia,
+      tipo,
     };
   }, [numEntregas, numPrecio, showResult]);
 
@@ -142,7 +149,7 @@ export function CalculatorSection() {
                 🚴‍♂️
               </motion.div>
 
-              {result.esGanancia ? (
+              {result.tipo === "ganancia" ? (
                 <>
                   <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="text-foreground text-base md:text-lg mb-2">
                     ¡Sí! Tus envíos ya te generan ganancia adicional (descontando membresía) 🤑
@@ -162,6 +169,27 @@ export function CalculatorSection() {
                   <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="text-muted-foreground text-sm mb-2">de ganancia neta por mes</motion.p>
                   <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.65 }} className="text-muted-foreground text-xs mb-6">
                     Ya incluye membresía de ${MEMBRESIA.toLocaleString("es-MX")} MXN
+                  </motion.p>
+                </>
+              ) : result.tipo === "parcial" ? (
+                <>
+                  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="text-foreground text-base md:text-lg mb-2">
+                    Le ganas <span className="font-bold text-hero-accent">${result.diferenciaPorEnvio}</span> a cada envío, pero al descontar la membresía aún pagarías:
+                  </motion.p>
+                  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="text-muted-foreground text-sm md:text-base mb-2">
+                    Ganancia por envíos: <span className="font-bold text-foreground">${result.gananciaEnvios.toLocaleString("es-MX")}</span> — Membresía: <span className="font-bold text-foreground">${MEMBRESIA.toLocaleString("es-MX")}</span>
+                  </motion.p>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.5, type: "spring", stiffness: 150 }}
+                    className="text-hero-accent text-5xl md:text-6xl font-bold mb-1"
+                  >
+                    <AnimatedNumber value={result.neto} />
+                  </motion.div>
+                  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="text-muted-foreground text-sm mb-6">por mes</motion.p>
+                  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.65 }} className="text-muted-foreground text-xs mb-6">
+                    💡 Aumenta tus entregas o el precio por envío para cubrir la membresía y empezar a generar ganancia.
                   </motion.p>
                 </>
               ) : (
