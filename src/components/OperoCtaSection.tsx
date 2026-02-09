@@ -5,7 +5,7 @@ export function OperoCtaSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"],
+    offset: ["start 0.9", "start 0.3"],
   });
 
   const text =
