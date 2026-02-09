@@ -89,7 +89,7 @@ export function BackgroundPaths() {
 
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-hero-foreground/60 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Transforma tu logística con nuestra plataforma de vanguardia. Diseñada para negocios, construida para rendimiento, creada para la excelencia.
+            Centraliza, controla y escala tus envíos diarios desde un solo lugar.
           </p>
 
           {/* CTA Buttons */}
