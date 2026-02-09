@@ -52,7 +52,7 @@ function FloatingPaths({ position }: { position: number }) {
 
 export function BackgroundPaths() {
   return (
-    <div className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-hero pt-2 sm:pt-20 md:pt-28 pb-4 px-4">
+    <div className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-hero pt-1 sm:pt-16 md:pt-24 pb-1 px-4">
       <div className="absolute inset-0">
         <FloatingPaths position={1} />
         <FloatingPaths position={-1} />
@@ -66,7 +66,7 @@ export function BackgroundPaths() {
           className="max-w-4xl mx-auto"
         >
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-hero-accent/10 border border-hero-accent/20 mb-4 sm:mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1 sm:px-4 sm:py-2 rounded-full bg-hero-accent/10 border border-hero-accent/20 mb-2 sm:mb-6">
             <Star className="w-3 h-3 sm:w-4 sm:h-4 text-hero-accent" />
             <span className="text-hero-foreground/80 text-xs sm:text-sm font-medium">
               Respaldado por líderes de la industria
@@ -74,7 +74,7 @@ export function BackgroundPaths() {
           </div>
 
           {/* Main Heading - Two lines on mobile */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-8 tracking-tighter text-hero-foreground">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-2 sm:mb-6 tracking-tighter text-hero-foreground">
             <span className="block sm:inline">Tu reparto sin</span>{" "}
             <span className="text-hero-accent">
               <Typewriter
@@ -89,15 +89,15 @@ export function BackgroundPaths() {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-sm sm:text-lg md:text-xl text-hero-foreground/60 mb-6 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-2">
+          <p className="text-xs sm:text-base md:text-lg text-hero-foreground/60 mb-3 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-2">
             Centraliza, controla y escala tus envíos diarios desde un solo lugar, con visibilidad total y una operación diseñada para crecer contigo.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 sm:mb-12">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center mb-3 sm:mb-10">
             <Button
               variant="ghost"
-              className="rounded-2xl px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg font-semibold 
+              className="rounded-2xl px-5 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-semibold 
               bg-hero-accent hover:bg-hero-accent/90 text-white transition-all duration-300 
               hover:scale-105 border-none shadow-lg shadow-hero-accent/25"
             >
@@ -106,7 +106,7 @@ export function BackgroundPaths() {
             </Button>
             <Button
               variant="ghost"
-              className="rounded-2xl px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg font-semibold 
+              className="rounded-2xl px-5 py-3 sm:px-8 sm:py-6 text-sm sm:text-lg font-semibold 
               bg-hero-foreground/5 hover:bg-hero-foreground/10 text-hero-foreground border border-hero-foreground/20 
               backdrop-blur-xl transition-all duration-300"
             >
@@ -115,7 +115,7 @@ export function BackgroundPaths() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-sm sm:max-w-md mx-auto mb-4 sm:mb-6">
+          <div className="grid grid-cols-3 gap-3 sm:gap-8 max-w-xs sm:max-w-md mx-auto mb-1 sm:mb-4">
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-hero-foreground">1M+</p>
               <p className="text-hero-foreground/50 text-xs sm:text-sm">Users</p>
@@ -133,7 +133,7 @@ export function BackgroundPaths() {
       </div>
 
       {/* Animated Motorcycles - Full Width */}
-      <div className="relative z-10 w-screen overflow-hidden h-10 sm:h-14 md:h-20 flex items-center mt-4 sm:mt-6 md:mt-8">
+      <div className="relative z-10 w-screen overflow-hidden h-8 sm:h-14 md:h-20 flex items-center mt-1 sm:mt-4 md:mt-6">
         <motion.div
           className="flex items-center gap-8 sm:gap-12 md:gap-20"
           animate={{ x: ["-50%", "0%"] }}
