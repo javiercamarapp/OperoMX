@@ -99,7 +99,7 @@ export function BackgroundPaths() {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-4 sm:mb-10">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-12 sm:mb-10">
             <Button
               variant="ghost"
               className="rounded-2xl px-8 py-5 sm:px-8 sm:py-6 text-lg sm:text-lg font-semibold 
