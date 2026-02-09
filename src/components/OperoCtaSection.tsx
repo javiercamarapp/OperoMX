@@ -16,12 +16,12 @@ export function OperoCtaSection() {
     <section ref={containerRef} className="relative">
       {/* Top wave */}
       <svg
-        viewBox="0 0 1440 80"
+        viewBox="0 0 1440 120"
         preserveAspectRatio="none"
-        className="block w-full h-[40px] md:h-[80px] -mb-px"
+        className="block w-full h-[60px] md:h-[120px] -mb-px"
       >
         <path
-          d="M0,80 C360,0 720,70 1080,10 C1260,0 1380,30 1440,20 L1440,80 L0,80 Z"
+          d="M0,120 C120,80 240,100 360,60 C480,20 600,90 720,50 C840,10 960,70 1080,40 C1200,10 1320,60 1440,30 L1440,120 L0,120 Z"
           fill="hsl(var(--hero-accent))"
         />
       </svg>
@@ -43,12 +43,12 @@ export function OperoCtaSection() {
 
       {/* Bottom wave */}
       <svg
-        viewBox="0 0 1440 80"
+        viewBox="0 0 1440 120"
         preserveAspectRatio="none"
-        className="block w-full h-[40px] md:h-[80px] -mt-px"
+        className="block w-full h-[60px] md:h-[120px] -mt-px"
       >
         <path
-          d="M0,0 C360,80 720,10 1080,70 C1260,80 1380,50 1440,60 L1440,0 L0,0 Z"
+          d="M0,0 C180,90 300,30 480,80 C660,110 780,20 960,70 C1140,100 1260,30 1440,50 L1440,0 L0,0 Z"
           fill="hsl(var(--hero-accent))"
         />
       </svg>
