@@ -51,7 +51,7 @@ const CardSticky = React.forwardRef<HTMLDivElement, CardStickyProps>(
         style={{
           ...style,
           top: baseTop + y,
-          zIndex: 100 - index,
+          zIndex: 100 + index,
         }}
         {...props}
       >
