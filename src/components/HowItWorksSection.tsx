@@ -58,6 +58,7 @@ export function HowItWorksSection() {
         <FeatureSteps
           features={features}
           title="📋 Paso a paso — Cómo funciona Opero"
+          autoPlayInterval={5000}
           imageHeight="h-[300px] md:h-[450px]"
         />
         <p className="text-center text-muted-foreground text-sm md:text-base px-8 pb-10 max-w-2xl mx-auto">
