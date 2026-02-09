@@ -52,7 +52,7 @@ function FloatingPaths({ position }: { position: number }) {
 
 export function BackgroundPaths() {
   return (
-    <div className="relative h-screen w-full flex flex-col items-center justify-between overflow-hidden bg-hero pt-20 sm:pt-28 md:pt-32 pb-4">
+    <div className="relative h-screen w-full flex flex-col items-center justify-between overflow-hidden bg-hero pt-14 sm:pt-24 md:pt-32 pb-4 px-4">
       <div className="absolute inset-0">
         <FloatingPaths position={1} />
         <FloatingPaths position={-1} />
@@ -133,7 +133,7 @@ export function BackgroundPaths() {
       </div>
 
       {/* Animated Motorcycles - Full Width */}
-      <div className="relative z-10 w-screen overflow-hidden h-10 sm:h-14 md:h-20 flex items-center">
+      <div className="relative z-10 w-screen overflow-hidden h-10 sm:h-14 md:h-20 flex items-center mb-4 sm:mb-6 md:mb-8">
         <motion.div
           className="flex items-center gap-8 sm:gap-12 md:gap-20"
           animate={{ x: ["-50%", "0%"] }}
