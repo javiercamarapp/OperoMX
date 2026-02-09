@@ -92,17 +92,17 @@ export function ServiciosSection() {
                 baseTopMobile={20}
                 incrementY={20}
                 incrementZ={10}
-                className="rounded-2xl border border-border bg-card p-4 md:p-8 shadow-lg"
+                className="rounded-xl md:rounded-2xl border border-border bg-card p-3 md:p-8 shadow-lg"
               >
-                <div className="flex items-start justify-between gap-4 mb-2 md:mb-4">
-                  <h3 className="text-lg md:text-2xl font-bold text-foreground">
+                <div className="flex items-start justify-between gap-2 md:gap-4 mb-1 md:mb-4">
+                  <h3 className="text-base md:text-2xl font-bold text-foreground">
                     {servicio.title}
                   </h3>
-                  <span className="text-2xl md:text-4xl font-bold text-hero-accent shrink-0">
+                  <span className="text-xl md:text-4xl font-bold text-hero-accent shrink-0">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <p className="text-muted-foreground text-sm md:text-lg leading-relaxed">
+                <p className="text-muted-foreground text-xs md:text-lg leading-relaxed">
                   {servicio.description}
                 </p>
               </CardSticky>
