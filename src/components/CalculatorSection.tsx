@@ -1,8 +1,28 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue, useTransform, animate } from "framer-motion";
 import { Button } from "@/components/ui/button";
+
+function AnimatedNumber({ value, className }: { value: number; className?: string }) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const motionVal = useMotionValue(0);
+
+  useEffect(() => {
+    const controls = animate(motionVal, value, {
+      duration: 0.8,
+      ease: "easeOut",
+      onUpdate: (v) => {
+        if (ref.current) {
+          ref.current.textContent = `$${Math.round(v).toLocaleString("es-MX")}`;
+        }
+      },
+    });
+    return () => controls.stop();
+  }, [value, motionVal]);
+
+  return <span ref={ref} className={className}>$0</span>;
+}
 
 const COSTO_OPERO = 55;
 const MEMBRESIA = 2000;
@@ -131,14 +151,14 @@ export function CalculatorSection() {
                     Tu cliente pagará <span className="font-bold text-foreground">${numPrecio}</span> por envío
                     y tú ganarás <span className="font-bold text-hero-accent">${result.diferenciaPorEnvio}</span> extra por cada entrega.
                   </motion.p>
-                  <motion.p
+                  <motion.div
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.5, type: "spring", stiffness: 150 }}
                     className="text-hero-accent text-5xl md:text-6xl font-bold mb-1"
                   >
-                    ${result.neto.toLocaleString("es-MX")}
-                  </motion.p>
+                    <AnimatedNumber value={result.neto} />
+                  </motion.div>
                   <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="text-muted-foreground text-sm mb-2">de ganancia neta por mes</motion.p>
                   <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.65 }} className="text-muted-foreground text-xs mb-6">
                     Ya incluye membresía de ${MEMBRESIA.toLocaleString("es-MX")} MXN
@@ -157,14 +177,14 @@ export function CalculatorSection() {
                     y tú estarás subsidiando <span className="font-bold text-hero-accent">${result.diferenciaPorEnvio}</span> por cada
                     entrega para hacerlo más atractivo.
                   </motion.p>
-                  <motion.p
+                  <motion.div
                     initial={{ opacity: 0, scale: 0.5 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.5, type: "spring", stiffness: 150 }}
                     className="text-hero-accent text-5xl md:text-6xl font-bold mb-1"
                   >
-                    ${result.totalMensual.toLocaleString("es-MX")}
-                  </motion.p>
+                    <AnimatedNumber value={result.totalMensual} />
+                  </motion.div>
                   <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="text-muted-foreground text-sm mb-6">por mes</motion.p>
                 </>
               )}
