@@ -61,7 +61,7 @@ const CardSticky = React.forwardRef<HTMLDivElement, CardStickyProps>(
     return (
       <motion.div
         ref={ref}
-        className={cn("lg:sticky", className)}
+        className={cn("sticky", className)}
         style={{
           ...style,
           top: effectiveBaseTop + y,
