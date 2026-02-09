@@ -89,7 +89,7 @@ export function BackgroundPaths() {
 
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-hero-foreground/60 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Centraliza, controla y escala tus envíos diarios desde un solo lugar.
+            Centraliza, controla y escala tus envíos diarios desde un solo lugar, con visibilidad total y una operación diseñada para crecer contigo.
           </p>
 
           {/* CTA Buttons */}
