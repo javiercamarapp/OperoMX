@@ -3,69 +3,54 @@ import { Button } from "@/components/ui/button";
 import { Typewriter } from "@/components/ui/typewriter-text";
 import { Star } from "lucide-react";
 import motoImage from "@/assets/moto.png";
-
-function FloatingPaths({ position }: { position: number }) {
-  const paths = Array.from({ length: 36 }, (_, i) => ({
+function FloatingPaths({
+  position
+}: {
+  position: number;
+}) {
+  const paths = Array.from({
+    length: 36
+  }, (_, i) => ({
     id: i,
-    d: `M-${380 - i * 5 * position} -${189 + i * 6}C-${
-      380 - i * 5 * position
-    } -${189 + i * 6} -${312 - i * 5 * position} ${216 - i * 6} ${
-      152 - i * 5 * position
-    } ${343 - i * 6}C${616 - i * 5 * position} ${470 - i * 6} ${
-      684 - i * 5 * position
-    } ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`,
-    width: 0.5 + i * 0.03,
+    d: `M-${380 - i * 5 * position} -${189 + i * 6}C-${380 - i * 5 * position} -${189 + i * 6} -${312 - i * 5 * position} ${216 - i * 6} ${152 - i * 5 * position} ${343 - i * 6}C${616 - i * 5 * position} ${470 - i * 6} ${684 - i * 5 * position} ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`,
+    width: 0.5 + i * 0.03
   }));
-
-  return (
-    <div className="absolute inset-0 pointer-events-none -left-[20%] -right-[20%] w-[140%] sm:-left-[10%] sm:-right-[10%] sm:w-[120%] md:left-0 md:right-0 md:w-full">
-      <svg
-        className="w-full h-full scale-[1.2] sm:scale-100 origin-center"
-        viewBox="0 0 696 316"
-        fill="none"
-        preserveAspectRatio="xMidYMid slice"
-      >
+  return <div className="absolute inset-0 pointer-events-none -left-[20%] -right-[20%] w-[140%] sm:-left-[10%] sm:-right-[10%] sm:w-[120%] md:left-0 md:right-0 md:w-full">
+      <svg className="w-full h-full scale-[1.2] sm:scale-100 origin-center" viewBox="0 0 696 316" fill="none" preserveAspectRatio="xMidYMid slice">
         <title>Background Paths</title>
-        {paths.map((path) => (
-          <motion.path
-            key={path.id}
-            d={path.d}
-            stroke="hsl(var(--hero-paths))"
-            strokeWidth={path.width}
-            strokeOpacity={0.15 + path.id * 0.025}
-            initial={{ pathLength: 0.3, opacity: 0.6 }}
-            animate={{
-              pathLength: 1,
-              opacity: [0.3, 0.6, 0.3],
-              pathOffset: [0, 1, 0],
-            }}
-            transition={{
-              duration: 20 + Math.random() * 10,
-              repeat: Number.POSITIVE_INFINITY,
-              ease: "linear",
-            }}
-          />
-        ))}
+        {paths.map(path => <motion.path key={path.id} d={path.d} stroke="hsl(var(--hero-paths))" strokeWidth={path.width} strokeOpacity={0.15 + path.id * 0.025} initial={{
+        pathLength: 0.3,
+        opacity: 0.6
+      }} animate={{
+        pathLength: 1,
+        opacity: [0.3, 0.6, 0.3],
+        pathOffset: [0, 1, 0]
+      }} transition={{
+        duration: 20 + Math.random() * 10,
+        repeat: Number.POSITIVE_INFINITY,
+        ease: "linear"
+      }} />)}
       </svg>
-    </div>
-  );
+    </div>;
 }
-
 export function BackgroundPaths() {
-  return (
-    <div className="relative h-screen w-full flex flex-col items-center justify-between overflow-hidden bg-hero pt-16 sm:pt-20 md:pt-28 pb-2 px-4">
+  return <div className="relative h-screen w-full flex flex-col items-center justify-between overflow-hidden bg-hero pt-16 sm:pt-20 md:pt-28 pb-2 px-4">
       <div className="absolute inset-0">
         <FloatingPaths position={1} />
         <FloatingPaths position={-1} />
       </div>
 
       <div className="relative z-10 container mx-auto px-4 md:px-6 text-center flex-1 flex flex-col justify-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="max-w-4xl mx-auto"
-        >
+        <motion.div initial={{
+        opacity: 0,
+        y: 20
+      }} animate={{
+        opacity: 1,
+        y: 0
+      }} transition={{
+        duration: 1,
+        delay: 0.5
+      }} className="max-w-4xl mx-auto">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-hero-accent/10 border border-hero-accent/20 mb-4 sm:mb-6">
             <Star className="w-3 h-3 sm:w-4 sm:h-4 text-hero-accent" />
@@ -79,16 +64,7 @@ export function BackgroundPaths() {
             <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-hero-foreground">
               <span className="block sm:inline">Tu reparto sin</span>{" "}
               <span className="text-hero-accent block sm:inline min-w-[280px] sm:min-w-0 text-center sm:text-left">
-                <Typewriter
-                  text={["complicaciones", "retrasos", "preocupaciones"]}
-                  speed={80}
-                  cursor="|"
-                  loop={true}
-                  delay={2000}
-                  deleteSpeed={40}
-                  smallWords={["complicaciones", "retrasos", "preocupaciones"]}
-                  smallClassName="text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
-                />
+                <Typewriter text={["complicaciones", "retrasos", "preocupaciones"]} speed={80} cursor="|" loop={true} delay={2000} deleteSpeed={40} smallWords={["complicaciones", "retrasos", "preocupaciones"]} smallClassName="text-4xl sm:text-5xl md:text-6xl lg:text-7xl" />
               </span>
             </h1>
           </div>
@@ -100,21 +76,15 @@ export function BackgroundPaths() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-12 sm:mb-10">
-            <Button
-              variant="ghost"
-              className="rounded-2xl px-8 py-5 sm:px-8 sm:py-6 text-lg sm:text-lg font-semibold 
+            <Button variant="ghost" className="rounded-2xl px-8 py-5 sm:px-8 sm:py-6 text-lg sm:text-lg font-semibold 
               bg-hero-accent hover:bg-hero-accent/90 text-white transition-all duration-300 
-              hover:scale-105 border-none shadow-lg shadow-hero-accent/25"
-            >
+              hover:scale-105 border-none shadow-lg shadow-hero-accent/25">
               <span>Empezar ahora</span>
               <span className="ml-2">→</span>
             </Button>
-            <Button
-              variant="ghost"
-              className="rounded-2xl px-8 py-5 sm:px-8 sm:py-6 text-lg sm:text-lg font-semibold 
+            <Button variant="ghost" className="rounded-2xl px-8 py-5 sm:px-8 sm:py-6 text-lg sm:text-lg font-semibold 
               bg-hero-foreground/5 hover:bg-hero-foreground/10 text-hero-foreground border border-hero-foreground/20 
-              backdrop-blur-xl transition-all duration-300"
-            >
+              backdrop-blur-xl transition-all duration-300">
               Más información
             </Button>
           </div>
@@ -122,16 +92,16 @@ export function BackgroundPaths() {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-sm sm:max-w-md mx-auto mb-12 sm:mb-0">
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-hero-foreground">1M+</p>
-              <p className="text-hero-foreground/50 text-xs sm:text-sm">Users</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-hero-foreground">​1,000+</p>
+              <p className="text-hero-foreground/50 text-xs sm:text-sm">Repartidores</p>
             </div>
             <div className="text-center">
-              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-hero-foreground">50+</p>
-              <p className="text-hero-foreground/50 text-xs sm:text-sm">Countries</p>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-hero-foreground">5</p>
+              <p className="text-hero-foreground/50 text-xs sm:text-sm">Estados</p>
             </div>
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-hero-foreground">24/7</p>
-              <p className="text-hero-foreground/50 text-xs sm:text-sm">Support</p>
+              <p className="text-hero-foreground/50 text-xs sm:text-sm">Soporte</p>
             </div>
           </div>
         </motion.div>
@@ -139,16 +109,14 @@ export function BackgroundPaths() {
 
       {/* Animated Motorcycles - Full Width */}
       <div className="relative z-10 w-screen overflow-hidden h-20 sm:h-14 md:h-20 flex items-center -mb-2">
-        <motion.div
-          className="flex items-center gap-8 sm:gap-12 md:gap-20"
-          animate={{ x: ["-50%", "0%"] }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-            repeatType: "loop",
-          }}
-        >
+        <motion.div className="flex items-center gap-8 sm:gap-12 md:gap-20" animate={{
+        x: ["-50%", "0%"]
+      }} transition={{
+        duration: 20,
+        repeat: Infinity,
+        ease: "linear",
+        repeatType: "loop"
+      }}>
       {/* Motos suficientes para cubrir todo el ancho sin espacios */}
           <img src={motoImage} alt="Moto" className="h-16 sm:h-12 md:h-16 w-auto" />
           <img src={motoImage} alt="Moto" className="h-16 sm:h-12 md:h-16 w-auto" />
@@ -172,6 +140,5 @@ export function BackgroundPaths() {
           <img src={motoImage} alt="Moto" className="h-16 sm:h-12 md:h-16 w-auto" />
         </motion.div>
       </div>
-    </div>
-  );
+    </div>;
 }
