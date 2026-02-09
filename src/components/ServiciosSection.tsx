@@ -1,3 +1,4 @@
+import { ContainerScroll, CardSticky } from "@/components/ui/cards-stack"
 import { AnimatedText } from "@/components/ui/animated-underline-text-one"
 import { DeliveryAnimation } from "@/components/DeliveryAnimation"
 
@@ -57,8 +58,8 @@ export function ServiciosSection() {
     <section className="bg-background py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-          {/* Left Column */}
-          <div className="z-10 bg-background pb-6">
+          {/* Left Column - Sticky */}
+          <div className="lg:sticky lg:top-40 z-10 bg-background pb-6 lg:h-fit">
             <p className="text-hero-accent font-semibold text-sm uppercase tracking-wider mb-4">
               nuestros servicios
             </p>
@@ -79,11 +80,16 @@ export function ServiciosSection() {
             <DeliveryAnimation />
           </div>
 
-          {/* Right Column - Static Cards */}
-          <div className="flex flex-col gap-4">
+          {/* Right Column - Stacking Cards */}
+          <ContainerScroll className="gap-0">
             {SERVICIOS.map((servicio, index) => (
-              <div
+              <CardSticky
                 key={servicio.id}
+                index={index}
+                baseTop={220}
+                baseTopMobile={80}
+                incrementY={20}
+                incrementZ={10}
                 className="rounded-2xl border border-border bg-card p-6 md:p-8 shadow-lg"
               >
                 <div className="flex items-start justify-between gap-4 mb-4">
@@ -97,9 +103,12 @@ export function ServiciosSection() {
                 <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
                   {servicio.description}
                 </p>
-              </div>
+              </CardSticky>
             ))}
-          </div>
+
+            {/* Spacer grande para que todas las cards se junten antes de salir */}
+            <div aria-hidden className="h-[60vh] lg:h-[80vh]" />
+          </ContainerScroll>
         </div>
       </div>
     </section>
