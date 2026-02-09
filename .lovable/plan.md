@@ -1,12 +1,10 @@
 
-## Reducir altura del header en movil
+## Ajustar baseTopMobile de las cards
 
-El header de la seccion de servicios ocupa demasiado espacio vertical en movil debido a los paddings y margenes. Se ajustaran las clases para hacerlo mas compacto.
+Ahora que el header de servicios ya no es sticky en movil, las cards no necesitan un offset tan grande para evitarlo. El valor actual `baseTopMobile={340}` era alto para compensar el header sticky; se puede reducir significativamente.
 
-### Cambios en `src/components/ServiciosSection.tsx`
+### Cambio en `src/components/ServiciosSection.tsx`
 
-1. **Reducir padding vertical del contenedor**: Cambiar `pt-4 pb-2` a `pt-2 pb-1` en movil
-2. **Ocultar la animacion de la moto en movil**: La `DeliveryAnimation` ocupa espacio significativo; se envolvera con `hidden lg:block` para mostrarla solo en desktop
-3. **Reducir margen del parrafo descriptivo**: Mantener `mb-1` en movil (ya esta compacto)
+- Cambiar `baseTopMobile={340}` a `baseTopMobile={20}` (un valor bajo, ya que en movil las cards simplemente fluyen debajo del header sin necesidad de esquivarlo)
 
-Estos cambios haran que el header sea mucho mas corto en movil, dejando mas espacio visible para las tarjetas de servicios.
+Esto eliminara el espacio excesivo en la parte superior de las cards en movil.
