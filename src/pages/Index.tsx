@@ -1,6 +1,7 @@
 import { BackgroundPaths } from "@/components/ui/background-paths";
 import { NavBar } from "@/components/ui/tubelight-navbar";
 import { ServiciosSection } from "@/components/ServiciosSection";
+import { OperoCtaSection } from "@/components/OperoCtaSection";
 import { Home, Truck, Users, Mail } from "lucide-react";
 
 const navItems = [
@@ -18,6 +19,7 @@ const Index = () => {
       <div id="servicios">
         <ServiciosSection />
       </div>
+      <OperoCtaSection />
     </>
   );
 };
