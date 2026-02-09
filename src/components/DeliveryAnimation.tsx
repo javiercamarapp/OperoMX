@@ -1,12 +1,10 @@
 import { motion } from "framer-motion";
 import { Store } from "lucide-react";
 import motoImage from "@/assets/moto.png";
-
 export function DeliveryAnimation() {
-  return (
-    <div className="relative w-full h-44 mt-2">
+  return <div className="relative w-full h-44 mt-2">
       {/* Road line */}
-      <div className="absolute bottom-6 left-0 right-0 h-0.5 bg-muted-foreground/30" />
+      
 
       {/* Store icon - fixed position on the right */}
       <div className="absolute right-0 bottom-6">
@@ -15,71 +13,52 @@ export function DeliveryAnimation() {
             <Store className="w-10 h-10 text-hero-accent" />
           </div>
           {/* Pulse effect */}
-          <motion.div
-            className="absolute inset-0 rounded-lg border-2 border-hero-accent"
-            animate={{
-              scale: [1, 1.3, 1],
-              opacity: [0.5, 0, 0.5],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
+          <motion.div className="absolute inset-0 rounded-lg border-2 border-hero-accent" animate={{
+          scale: [1, 1.3, 1],
+          opacity: [0.5, 0, 0.5]
+        }} transition={{
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }} />
         </div>
       </div>
 
       {/* Motorcycle animation - ida y vuelta */}
-      <motion.div
-        className="absolute bottom-10 left-0"
-        animate={{
-          left: ["0%", "calc(100% - 200px)", "0%"],
-        }}
-        transition={{
+      <motion.div className="absolute bottom-10 left-0" animate={{
+      left: ["0%", "calc(100% - 200px)", "0%"]
+    }} transition={{
+      duration: 4,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }}>
+        <motion.img src={motoImage} alt="Moto de delivery" className="w-40 h-auto origin-center" animate={{
+        y: [0, -2, 0],
+        scaleX: [1, 1, -1, -1, 1]
+      }} transition={{
+        y: {
+          duration: 0.3,
+          repeat: Infinity,
+          ease: "easeInOut"
+        },
+        scaleX: {
           duration: 4,
           repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      >
-        <motion.img
-          src={motoImage}
-          alt="Moto de delivery"
-          className="w-40 h-auto origin-center"
-          animate={{ 
-            y: [0, -2, 0],
-            scaleX: [1, 1, -1, -1, 1],
-          }}
-          transition={{
-            y: {
-              duration: 0.3,
-              repeat: Infinity,
-              ease: "easeInOut",
-            },
-            scaleX: {
-              duration: 4,
-              repeat: Infinity,
-              ease: "linear",
-              times: [0, 0.49, 0.50, 0.99, 1],
-            },
-          }}
-        />
+          ease: "linear",
+          times: [0, 0.49, 0.50, 0.99, 1]
+        }
+      }} />
       </motion.div>
 
       {/* Motion trail */}
-      <motion.div
-        className="absolute bottom-7 left-0 h-0.5 bg-gradient-to-r from-transparent via-hero-accent/50 to-transparent rounded-full"
-        animate={{
-          width: ["0%", "30%", "0%", "30%", "0%"],
-          left: ["0%", "35%", "65%", "30%", "0%"],
-          opacity: [0, 0.6, 0, 0.6, 0],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
-    </div>
-  );
+      <motion.div className="absolute bottom-7 left-0 h-0.5 bg-gradient-to-r from-transparent via-hero-accent/50 to-transparent rounded-full" animate={{
+      width: ["0%", "30%", "0%", "30%", "0%"],
+      left: ["0%", "35%", "65%", "30%", "0%"],
+      opacity: [0, 0.6, 0, 0.6, 0]
+    }} transition={{
+      duration: 4,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }} />
+    </div>;
 }
