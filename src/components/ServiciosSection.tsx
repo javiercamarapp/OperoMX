@@ -108,7 +108,7 @@ export function ServiciosSection() {
             ))}
 
             {/* Spacer: just enough for cards to stack, then header releases */}
-            <div aria-hidden className="h-[25vh] lg:h-[80vh]" />
+            <div aria-hidden className="h-[5vh] lg:h-[80vh]" />
           </ContainerScroll>
         </div>
       </div>
