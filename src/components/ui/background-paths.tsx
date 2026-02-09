@@ -98,7 +98,7 @@ export function BackgroundPaths() {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-6 sm:mb-10">
             <Button
               variant="ghost"
-              className="rounded-2xl px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg font-semibold 
+              className="rounded-2xl px-8 py-5 sm:px-8 sm:py-6 text-lg sm:text-lg font-semibold 
               bg-hero-accent hover:bg-hero-accent/90 text-white transition-all duration-300 
               hover:scale-105 border-none shadow-lg shadow-hero-accent/25"
             >
@@ -107,7 +107,7 @@ export function BackgroundPaths() {
             </Button>
             <Button
               variant="ghost"
-              className="rounded-2xl px-6 py-4 sm:px-8 sm:py-6 text-base sm:text-lg font-semibold 
+              className="rounded-2xl px-8 py-5 sm:px-8 sm:py-6 text-lg sm:text-lg font-semibold 
               bg-hero-foreground/5 hover:bg-hero-foreground/10 text-hero-foreground border border-hero-foreground/20 
               backdrop-blur-xl transition-all duration-300"
             >
