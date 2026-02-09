@@ -50,7 +50,7 @@ export function ContactSection() {
               <p className="text-[10px] md:text-sm text-white/60 mb-1 md:mb-3 hidden md:block">{card.description}</p>
               <a
                 href={card.href}
-                className="text-[10px] md:text-base text-white font-semibold hover:underline break-all md:break-normal"
+                className="text-[10px] md:text-base text-white font-semibold hover:underline whitespace-nowrap"
               >
                 {card.value}
               </a>
