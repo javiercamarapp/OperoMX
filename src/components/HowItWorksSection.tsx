@@ -53,8 +53,8 @@ const features = [
 
 export function HowItWorksSection() {
   return (
-    <section id="como-funciona" className="relative px-4 md:px-8 lg:px-16 pt-14 md:pt-20 pb-2 md:pb-8 h-screen flex items-center">
-      <div className="mx-auto max-w-6xl w-full bg-card rounded-3xl shadow-2xl border border-border overflow-hidden">
+    <section id="como-funciona" className="relative px-2 md:px-8 lg:px-16 pt-14 md:pt-20 pb-2 md:pb-8 h-screen flex items-stretch">
+      <div className="mx-auto max-w-6xl w-full bg-card rounded-2xl md:rounded-3xl shadow-2xl border border-border overflow-hidden flex flex-col mt-1">
         <FeatureSteps
           features={features}
           title="📋 Paso a paso — Cómo funciona Opero"

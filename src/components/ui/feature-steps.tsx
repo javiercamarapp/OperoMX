@@ -50,13 +50,13 @@ export function FeatureSteps({
   const feature = features[currentFeature];
 
   return (
-    <div className={cn("p-3 md:p-8", className)}>
+    <div className={cn("p-3 md:p-8 flex-1 flex flex-col", className)}>
       <div className="max-w-7xl mx-auto w-full">
         <h2 className="text-lg md:text-3xl lg:text-4xl font-bold mb-2 md:mb-4 text-center">
           {title}
         </h2>
 
-        <div className="flex flex-col md:grid md:grid-cols-2 gap-2 md:gap-8 items-center">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-2 md:gap-8 items-center flex-1">
           {/* Text - Left */}
           <div className="order-2 md:order-1">
             <AnimatePresence mode="wait">
