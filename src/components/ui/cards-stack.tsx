@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 
 interface CardStickyProps extends HTMLMotionProps<"div"> {
   index: number
+  baseTop?: number
   incrementY?: number
   incrementZ?: number
 }
@@ -31,6 +32,7 @@ const CardSticky = React.forwardRef<HTMLDivElement, CardStickyProps>(
   (
     {
       index,
+      baseTop = 112,
       incrementY = 10,
       incrementZ = 10,
       children,
@@ -41,13 +43,16 @@ const CardSticky = React.forwardRef<HTMLDivElement, CardStickyProps>(
     ref
   ) => {
     const y = index * incrementY
-    const z = index * incrementZ
 
     return (
       <motion.div
         ref={ref}
-        className={cn("sticky top-28", className)}
-        style={{ ...style, marginTop: y, zIndex: z }}
+        className={cn("sticky", className)}
+        style={{
+          ...style,
+          top: baseTop + y,
+          zIndex: 100 - index,
+        }}
         {...props}
       >
         {children}
