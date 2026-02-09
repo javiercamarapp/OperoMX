@@ -44,7 +44,7 @@ function MobileCta() {
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "end start"],
+    offset: ["start 0.85", "center center"],
   });
 
   const text =
@@ -57,8 +57,8 @@ function MobileCta() {
         <p className="flex flex-wrap text-2xl font-bold text-white/20 leading-tight">
           {words.map((word, i) => {
             const total = words.length;
-            const start = (i / total) * 0.5;
-            const end = ((i + 1) / total) * 0.5;
+            const start = (i / total) * 0.9;
+            const end = ((i + 1) / total) * 0.9;
             return <MobileWord key={i} progress={scrollYProgress} range={[start, end]}>{word}</MobileWord>;
           })}
         </p>
