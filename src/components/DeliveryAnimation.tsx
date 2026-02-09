@@ -34,7 +34,7 @@ export function DeliveryAnimation() {
       <motion.div
         className="absolute bottom-8 left-0"
         animate={{
-          left: ["0%", "calc(100% - 80px)", "0%"],
+          left: ["0%", "calc(100% - 160px)", "0%"],
         }}
         transition={{
           duration: 4,
