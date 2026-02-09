@@ -76,7 +76,7 @@ export function BackgroundPaths() {
 
           {/* Main Heading - Two lines on mobile */}
           <div className="h-[140px] sm:h-auto sm:min-h-[80px] md:min-h-[100px] lg:min-h-[120px] mb-4 sm:mb-6 overflow-hidden flex flex-col justify-center">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-hero-foreground">
+            <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-hero-foreground">
               <span className="block sm:inline">Tu reparto sin</span>{" "}
               <span className="text-hero-accent block sm:inline min-w-[280px] sm:min-w-0 text-center sm:text-left">
                 <Typewriter
@@ -136,7 +136,7 @@ export function BackgroundPaths() {
       </div>
 
       {/* Animated Motorcycles - Full Width */}
-      <div className="relative z-10 w-screen overflow-hidden h-12 sm:h-14 md:h-20 flex items-center">
+      <div className="relative z-10 w-screen overflow-hidden h-20 sm:h-14 md:h-20 flex items-center -mb-2">
         <motion.div
           className="flex items-center gap-8 sm:gap-12 md:gap-20"
           animate={{ x: ["-50%", "0%"] }}
