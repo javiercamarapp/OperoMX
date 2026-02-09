@@ -6,6 +6,7 @@ import { HowItWorksSection } from "@/components/HowItWorksSection";
 import { PricingSection } from "@/components/PricingSection";
 import { IncludesSection } from "@/components/IncludesSection";
 import { CalculatorSection } from "@/components/CalculatorSection";
+import { GuaranteeSection } from "@/components/GuaranteeSection";
 import { ContactSection } from "@/components/ContactSection";
 import { FAQSection } from "@/components/FAQSection";
 import { Footer } from "@/components/ui/footer-section";
@@ -36,6 +37,7 @@ const Index = () => {
       </div>
       <IncludesSection />
       <CalculatorSection />
+      <GuaranteeSection />
       <div id="faq">
         <FAQSection />
       </div>
