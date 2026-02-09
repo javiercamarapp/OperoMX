@@ -1,3 +1,4 @@
+import { useRef, useState, useEffect } from "react"
 import { ContainerScroll, CardSticky } from "@/components/ui/cards-stack"
 import { AnimatedText } from "@/components/ui/animated-underline-text-one"
 import { DeliveryAnimation } from "@/components/DeliveryAnimation"
@@ -54,12 +55,37 @@ const SERVICIOS = [
 ]
 
 export function ServiciosSection() {
+  const sentinelRef = useRef<HTMLDivElement>(null)
+  const [headerReleased, setHeaderReleased] = useState(false)
+
+  useEffect(() => {
+    const sentinel = sentinelRef.current
+    if (!sentinel) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // When sentinel enters viewport, all cards are stacked → release header
+        if (window.innerWidth < 1024) {
+          setHeaderReleased(entry.isIntersecting)
+        }
+      },
+      { threshold: 0 }
+    )
+
+    observer.observe(sentinel)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <section className="bg-background min-h-screen lg:min-h-0 py-0 lg:py-24">
       <div className="container mx-auto px-4">
         <div className="lg:grid lg:grid-cols-2 lg:gap-16">
-          {/* Left Column - Sticky below navbar on all screens */}
-          <div className="sticky top-14 lg:top-40 z-[200] bg-background pt-2 pb-1 lg:pt-4 lg:pb-6 self-start">
+          {/* Left Column - Sticky below navbar, releases when all cards stacked */}
+          <div
+            className={`${
+              headerReleased ? "relative" : "sticky top-14"
+            } lg:sticky lg:top-40 z-[200] bg-background pt-2 pb-1 lg:pt-4 lg:pb-6 self-start`}
+          >
             <p className="text-hero-accent font-semibold text-xs lg:text-sm uppercase tracking-wider mb-1 lg:mb-4">
               nuestros servicios
             </p>
@@ -107,7 +133,10 @@ export function ServiciosSection() {
               </CardSticky>
             ))}
 
-            {/* Spacer grande para que todas las cards se junten antes de salir */}
+            {/* Sentinel: when visible, all cards are stacked */}
+            <div ref={sentinelRef} aria-hidden className="h-1" />
+
+            {/* Spacer para que las cards se apilen antes de salir */}
             <div aria-hidden className="h-[60vh] lg:h-[80vh]" />
           </ContainerScroll>
         </div>
