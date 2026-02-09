@@ -1,4 +1,5 @@
 import { ContainerScroll, CardSticky } from "@/components/ui/cards-stack"
+import { AnimatedText } from "@/components/ui/animated-underline-text-one"
 
 const SERVICIOS = [
   {
@@ -63,7 +64,12 @@ export function ServiciosSection() {
             </p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Todo tu reparto,{" "}
-              <span className="text-hero-accent">bajo control</span>
+              <AnimatedText 
+                text="bajo control" 
+                textClassName="text-hero-accent"
+                underlineClassName="text-hero-accent"
+                underlineDuration={1.2}
+              />
             </h2>
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
               Nuestra plataforma está diseñada para que gestiones tus envíos con total 
