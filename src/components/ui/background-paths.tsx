@@ -75,7 +75,7 @@ export function BackgroundPaths() {
           </div>
 
           {/* Main Heading - Two lines on mobile */}
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 tracking-tighter text-hero-foreground">
+          <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 tracking-tighter text-hero-foreground">
             <span className="block sm:inline">Tu reparto sin</span>{" "}
             <span className="text-hero-accent">
               <Typewriter
