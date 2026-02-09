@@ -83,10 +83,19 @@ export function NavBar({ items, className }: NavBarProps) {
             const isActive = activeTab === item.name
 
             return (
-              <Link
+              <a
                 key={item.name}
-                to={item.url}
-                onClick={() => setActiveTab(item.name)}
+                href={item.url}
+                onClick={(e) => {
+                  e.preventDefault()
+                  setActiveTab(item.name)
+                  if (item.url === "#") {
+                    window.scrollTo({ top: 0, behavior: "smooth" })
+                  } else {
+                    const el = document.querySelector(item.url)
+                    el?.scrollIntoView({ behavior: "smooth" })
+                  }
+                }}
                 className={cn(
                   "relative cursor-pointer text-sm font-semibold px-2.5 md:px-6 py-1.5 md:py-2 rounded-full transition-colors",
                   "text-foreground/80 hover:text-hero-accent",
@@ -115,7 +124,7 @@ export function NavBar({ items, className }: NavBarProps) {
                     </div>
                   </motion.div>
                 )}
-              </Link>
+              </a>
             )
           })}
         </div>
