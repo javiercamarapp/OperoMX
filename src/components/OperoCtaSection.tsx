@@ -20,9 +20,17 @@ export function OperoCtaSection() {
         preserveAspectRatio="none"
         className="block w-full h-[60px] md:h-[120px] -mb-px"
       >
-        <path
+        <motion.path
           d="M0,120 C120,80 240,100 360,60 C480,20 600,90 720,50 C840,10 960,70 1080,40 C1200,10 1320,60 1440,30 L1440,120 L0,120 Z"
           fill="hsl(var(--hero-accent))"
+          animate={{
+            d: [
+              "M0,120 C120,80 240,100 360,60 C480,20 600,90 720,50 C840,10 960,70 1080,40 C1200,10 1320,60 1440,30 L1440,120 L0,120 Z",
+              "M0,120 C120,60 240,90 360,40 C480,70 600,30 720,80 C840,50 960,90 1080,20 C1200,50 1320,30 1440,60 L1440,120 L0,120 Z",
+              "M0,120 C120,80 240,100 360,60 C480,20 600,90 720,50 C840,10 960,70 1080,40 C1200,10 1320,60 1440,30 L1440,120 L0,120 Z",
+            ],
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         />
       </svg>
 
@@ -47,9 +55,17 @@ export function OperoCtaSection() {
         preserveAspectRatio="none"
         className="block w-full h-[60px] md:h-[120px] -mt-px"
       >
-        <path
+        <motion.path
           d="M0,0 C180,90 300,30 480,80 C660,110 780,20 960,70 C1140,100 1260,30 1440,50 L1440,0 L0,0 Z"
           fill="hsl(var(--hero-accent))"
+          animate={{
+            d: [
+              "M0,0 C180,90 300,30 480,80 C660,110 780,20 960,70 C1140,100 1260,30 1440,50 L1440,0 L0,0 Z",
+              "M0,0 C180,40 300,80 480,30 C660,60 780,100 960,40 C1140,50 1260,80 1440,20 L1440,0 L0,0 Z",
+              "M0,0 C180,90 300,30 480,80 C660,110 780,20 960,70 C1140,100 1260,30 1440,50 L1440,0 L0,0 Z",
+            ],
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
       </svg>
     </section>
