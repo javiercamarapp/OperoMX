@@ -8,26 +8,26 @@ import { BorderTrail } from '@/components/ui/border-trail';
 
 export function PricingSection() {
   return (
-    <section className="relative px-4 md:px-8 lg:px-16 py-12 md:py-20">
-      <div className="mx-auto max-w-6xl bg-hero-accent rounded-3xl px-8 py-16 md:px-12 md:py-20 lg:px-16 lg:py-24 shadow-2xl">
-        <div className="flex flex-col items-center gap-6 text-center">
+    <section className="relative px-4 md:px-8 lg:px-16 py-8 md:py-12">
+      <div className="mx-auto max-w-6xl bg-hero-accent rounded-3xl px-8 py-10 md:px-12 md:py-14 lg:px-16 lg:py-16 shadow-2xl">
+        <div className="flex flex-col items-center gap-4 text-center">
           <div>
             <Badge variant="outline" className="border-white/30 text-white/90 bg-white/10">
               Precio
             </Badge>
           </div>
 
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+          <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
             Precio basado en tu éxito
           </h2>
 
-          <p className="max-w-2xl text-base text-white/80 md:text-lg">
+          <p className="max-w-2xl text-sm text-white/80 md:text-base">
             Ofrecemos un precio único para todos nuestros servicios. Creemos que un precio justo
             y transparente es clave para el crecimiento de tu negocio.
           </p>
         </div>
 
-        <div className="mx-auto mt-12 max-w-lg">
+        <div className="mx-auto mt-8 max-w-3xl">
           <div className="relative rounded-2xl bg-white/10 backdrop-blur-sm p-1">
             <BorderTrail
               className="from-white/70 via-white/50 to-white/20"
@@ -41,10 +41,10 @@ export function PricingSection() {
               delay={3}
             />
 
-            <div className="flex flex-col gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Monthly */}
-              <div className="rounded-xl bg-white/10 p-6 transition-all hover:bg-white/15">
-                <div className="flex items-start justify-between mb-2">
+              <div className="rounded-xl bg-white/10 p-5 transition-all hover:bg-white/15">
+                <div className="flex items-start justify-between mb-1">
                   <div>
                     <h3 className="text-lg font-semibold text-white">Mensual</h3>
                     <div className="flex items-center gap-2 mt-1">
@@ -53,12 +53,12 @@ export function PricingSection() {
                     </div>
                   </div>
                 </div>
-                <p className="text-sm text-white/70 mb-4">
+                <p className="text-sm text-white/70 mb-3">
                   ¡El mejor valor para negocios en crecimiento!
                 </p>
-                <div className="flex items-baseline gap-1 mb-4">
+                <div className="flex items-baseline gap-1 mb-3">
                   <span className="text-sm text-white/70">$</span>
-                  <span className="text-4xl font-bold text-white">7.99</span>
+                  <span className="text-3xl font-bold text-white">7.99</span>
                   <span className="text-sm text-white/70">/mes</span>
                 </div>
                 <Button className="w-full bg-white text-hero-accent hover:bg-white/90 font-semibold">
@@ -67,8 +67,8 @@ export function PricingSection() {
               </div>
 
               {/* Yearly */}
-              <div className="rounded-xl bg-white/15 p-6 ring-2 ring-white/30 transition-all hover:bg-white/20">
-                <div className="flex items-start justify-between mb-2">
+              <div className="rounded-xl bg-white/15 p-5 ring-2 ring-white/30 transition-all hover:bg-white/20">
+                <div className="flex items-start justify-between mb-1">
                   <div>
                     <h3 className="text-lg font-semibold text-white">Anual</h3>
                     <div className="flex items-center gap-2 mt-1">
@@ -77,12 +77,12 @@ export function PricingSection() {
                     </div>
                   </div>
                 </div>
-                <p className="text-sm text-white/70 mb-4">
+                <p className="text-sm text-white/70 mb-3">
                   ¡Desbloquea ahorros con un compromiso anual!
                 </p>
-                <div className="flex items-baseline gap-1 mb-4">
+                <div className="flex items-baseline gap-1 mb-3">
                   <span className="text-sm text-white/70">$</span>
-                  <span className="text-4xl font-bold text-white">6.99</span>
+                  <span className="text-3xl font-bold text-white">6.99</span>
                   <span className="text-sm text-white/70">/mes</span>
                 </div>
                 <Button className="w-full bg-white text-hero-accent hover:bg-white/90 font-semibold">
@@ -97,7 +97,7 @@ export function PricingSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="mt-6 flex items-center justify-center gap-2 text-sm text-white/70"
+            className="mt-4 flex items-center justify-center gap-2 text-sm text-white/70"
           >
             <ShieldCheckIcon className="h-4 w-4" />
             Acceso a todas las funcionalidades sin costes ocultos
