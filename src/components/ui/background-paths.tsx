@@ -75,19 +75,21 @@ export function BackgroundPaths() {
           </div>
 
           {/* Main Heading - Two lines on mobile */}
-          <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 tracking-tighter text-hero-foreground">
-            <span className="block sm:inline">Tu reparto sin</span>{" "}
-            <span className="text-hero-accent block sm:inline h-[1.2em] min-w-[280px] sm:min-w-0">
-              <Typewriter
-                text={["complicaciones", "retrasos", "preocupaciones"]}
-                speed={80}
-                cursor="|"
-                loop={true}
-                delay={2000}
-                deleteSpeed={40}
-              />
-            </span>
-          </h1>
+          <div className="min-h-[140px] sm:min-h-[80px] md:min-h-[100px] lg:min-h-[120px] mb-4 sm:mb-6">
+            <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-hero-foreground">
+              <span className="block sm:inline">Tu reparto sin</span>{" "}
+              <span className="text-hero-accent block sm:inline">
+                <Typewriter
+                  text={["complicaciones", "retrasos", "preocupaciones"]}
+                  speed={80}
+                  cursor="|"
+                  loop={true}
+                  delay={2000}
+                  deleteSpeed={40}
+                />
+              </span>
+            </h1>
+          </div>
 
           {/* Subtitle */}
           <p className="text-sm sm:text-base md:text-lg text-hero-foreground/60 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-2">
