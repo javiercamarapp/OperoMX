@@ -27,7 +27,7 @@ const contactCards = [
 export function ContactSection() {
   return (
     <section id="contacto" className="relative px-4 md:px-8 lg:px-16 py-12 md:py-20">
-      <div className="mx-auto max-w-6xl bg-hero-accent rounded-3xl shadow-2xl px-8 py-16 md:px-12 md:py-20 lg:px-16 lg:py-24">
+      <div data-bg-accent className="mx-auto max-w-6xl bg-hero-accent rounded-3xl shadow-2xl px-8 py-16 md:px-12 md:py-20 lg:px-16 lg:py-24">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
             Contáctanos

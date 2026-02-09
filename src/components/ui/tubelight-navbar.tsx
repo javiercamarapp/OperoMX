@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useCallback } from "react"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import { LucideIcon } from "lucide-react"
@@ -22,6 +22,21 @@ interface NavBarProps {
 export function NavBar({ items, className }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name)
   const [isMobile, setIsMobile] = useState(false)
+  const [isOverOrange, setIsOverOrange] = useState(false)
+
+  const checkOverlap = useCallback(() => {
+    const orangeSections = document.querySelectorAll("[data-bg-accent]")
+    const navY = 60 // approximate vertical center of navbar
+
+    let over = false
+    orangeSections.forEach((el) => {
+      const rect = el.getBoundingClientRect()
+      if (rect.top <= navY && rect.bottom >= navY) {
+        over = true
+      }
+    })
+    setIsOverOrange(over)
+  }, [])
 
   useEffect(() => {
     const handleResize = () => {
@@ -30,24 +45,44 @@ export function NavBar({ items, className }: NavBarProps) {
 
     handleResize()
     window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
+    window.addEventListener("scroll", checkOverlap, { passive: true })
+    checkOverlap()
+
+    return () => {
+      window.removeEventListener("resize", handleResize)
+      window.removeEventListener("scroll", checkOverlap)
+    }
+  }, [checkOverlap])
 
   return (
     <div
       className={cn(
-        "fixed top-0 left-0 right-0 z-[200] px-4 md:px-8 pt-4",
+        "fixed top-0 left-0 right-0 z-[200] px-4 md:px-8 pt-4 transition-colors duration-300",
         className
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Logo - Separated */}
+        {/* Logo */}
         <Link to="/" className="flex-shrink-0">
-          <img src={logo} alt="Logo" className="h-12 md:h-32 w-auto" />
+          <img
+            src={logo}
+            alt="Logo"
+            className={cn(
+              "h-12 md:h-32 w-auto transition-all duration-300",
+              isOverOrange && "brightness-0 invert"
+            )}
+          />
         </Link>
 
         {/* Centered Navigation Menu */}
-        <div className="flex items-center gap-2 bg-background/5 border border-border/40 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
+        <div
+          className={cn(
+            "flex items-center gap-2 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg transition-all duration-300",
+            isOverOrange
+              ? "bg-white/15 border border-white/30"
+              : "bg-background/5 border border-border/40"
+          )}
+        >
           {items.map((item) => {
             const Icon = item.icon
             const isActive = activeTab === item.name
@@ -59,8 +94,12 @@ export function NavBar({ items, className }: NavBarProps) {
                 onClick={() => setActiveTab(item.name)}
                 className={cn(
                   "relative cursor-pointer text-sm font-semibold px-4 md:px-6 py-2 rounded-full transition-colors",
-                  "text-foreground/80 hover:text-hero-accent",
-                  isActive && "bg-hero-accent/10 text-hero-accent"
+                  isOverOrange
+                    ? "text-white/90 hover:text-white"
+                    : "text-foreground/80 hover:text-hero-accent",
+                  isActive && (isOverOrange
+                    ? "bg-white/20 text-white"
+                    : "bg-hero-accent/10 text-hero-accent")
                 )}
               >
                 <span className="hidden md:inline">{item.name}</span>
@@ -70,7 +109,10 @@ export function NavBar({ items, className }: NavBarProps) {
                 {isActive && (
                   <motion.div
                     layoutId="lamp"
-                    className="absolute inset-0 w-full bg-hero-accent/5 rounded-full -z-10"
+                    className={cn(
+                      "absolute inset-0 w-full rounded-full -z-10",
+                      isOverOrange ? "bg-white/10" : "bg-hero-accent/5"
+                    )}
                     initial={false}
                     transition={{
                       type: "spring",
@@ -78,10 +120,22 @@ export function NavBar({ items, className }: NavBarProps) {
                       damping: 30,
                     }}
                   >
-                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-hero-accent rounded-t-full">
-                      <div className="absolute w-12 h-6 bg-hero-accent/20 rounded-full blur-md -top-2 -left-2" />
-                      <div className="absolute w-8 h-6 bg-hero-accent/20 rounded-full blur-md -top-1" />
-                      <div className="absolute w-4 h-4 bg-hero-accent/20 rounded-full blur-sm top-0 left-2" />
+                    <div className={cn(
+                      "absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 rounded-t-full",
+                      isOverOrange ? "bg-white" : "bg-hero-accent"
+                    )}>
+                      <div className={cn(
+                        "absolute w-12 h-6 rounded-full blur-md -top-2 -left-2",
+                        isOverOrange ? "bg-white/20" : "bg-hero-accent/20"
+                      )} />
+                      <div className={cn(
+                        "absolute w-8 h-6 rounded-full blur-md -top-1",
+                        isOverOrange ? "bg-white/20" : "bg-hero-accent/20"
+                      )} />
+                      <div className={cn(
+                        "absolute w-4 h-4 rounded-full blur-sm top-0 left-2",
+                        isOverOrange ? "bg-white/20" : "bg-hero-accent/20"
+                      )} />
                     </div>
                   </motion.div>
                 )}
@@ -90,12 +144,15 @@ export function NavBar({ items, className }: NavBarProps) {
           })}
         </div>
 
-        {/* CTA Button - Separated */}
+        {/* CTA Button */}
         <Button
           variant="ghost"
-          className="hidden sm:flex rounded-full px-6 py-2 text-sm font-semibold 
-          bg-hero-accent hover:bg-hero-accent/90 text-white transition-all duration-300 
-          border-none shadow-lg shadow-hero-accent/20"
+          className={cn(
+            "hidden sm:flex rounded-full px-6 py-2 text-sm font-semibold transition-all duration-300 border-none shadow-lg",
+            isOverOrange
+              ? "bg-white text-hero-accent hover:bg-white/90 shadow-white/20"
+              : "bg-hero-accent hover:bg-hero-accent/90 text-white shadow-hero-accent/20"
+          )}
         >
           Empezar ahora
         </Button>
