@@ -136,12 +136,12 @@ export function BackgroundPaths() {
       <div className="relative z-10 w-screen overflow-hidden h-16 md:h-20 flex items-center mb-8">
         <motion.div
           className="flex items-center gap-12 md:gap-20"
-          initial={{ x: "0%" }}
-          animate={{ x: "50%" }}
+          animate={{ x: ["0%", "-50%"] }}
           transition={{
             duration: 20,
             repeat: Infinity,
             ease: "linear",
+            repeatType: "loop",
           }}
         >
           {/* Motos suficientes para cubrir todo el ancho sin espacios */}
