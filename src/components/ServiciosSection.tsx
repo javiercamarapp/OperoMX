@@ -59,7 +59,7 @@ export function ServiciosSection() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Left Column - Sticky */}
-          <div className="lg:sticky lg:top-40 z-10 bg-background pb-6 lg:h-fit">
+          <div className="sticky top-24 lg:top-40 z-10 bg-background pb-6 self-start">
             <p className="text-hero-accent font-semibold text-sm uppercase tracking-wider mb-4">
               nuestros servicios
             </p>
