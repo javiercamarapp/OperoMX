@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import motoImage from "@/assets/moto.png";
 import localImage from "@/assets/local-comercial.png";
 export function DeliveryAnimation() {
-  return <div className="relative w-full h-16 md:h-40 mt-0">
+  return <div className="relative w-full h-16 md:h-40 mt-4 md:mt-0">
       {/* Road line */}
       
 
       {/* Store icon - fixed position on the right */}
-      <div className="absolute right-0 bottom-12">
+      <div className="absolute right-0 bottom-4 md:bottom-12">
         <div className="relative">
           <img src={localImage} alt="Local comercial" className="w-10 h-10 md:w-28 md:h-28 object-contain" />
           {/* Pulse effect */}
@@ -23,7 +23,7 @@ export function DeliveryAnimation() {
       </div>
 
       {/* Motorcycle animation - ida y vuelta */}
-      <motion.div className="absolute bottom-16 left-0" animate={{
+      <motion.div className="absolute bottom-6 md:bottom-16 left-0" animate={{
       left: ["0%", "calc(100% - 200px)", "0%"]
     }} transition={{
       duration: 4,
