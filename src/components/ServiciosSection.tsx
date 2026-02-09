@@ -55,9 +55,9 @@ export function ServiciosSection() {
   return (
     <section className="bg-background py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <ContainerScroll className="gap-4">
-          {/* Header */}
-          <div className="mb-12 md:mb-16 max-w-3xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+          {/* Left Column - Sticky Header */}
+          <div className="lg:sticky lg:top-24 lg:h-fit">
             <p className="text-hero-accent font-semibold text-sm uppercase tracking-wider mb-4">
               nuestros servicios
             </p>
@@ -71,31 +71,31 @@ export function ServiciosSection() {
             </p>
           </div>
 
-          {/* Cards */}
-          <div className="flex flex-col gap-4">
+          {/* Right Column - Stacking Cards */}
+          <ContainerScroll className="gap-0">
             {SERVICIOS.map((servicio, index) => (
               <CardSticky
                 key={servicio.id}
                 index={index}
-                incrementY={15}
+                incrementY={12}
                 incrementZ={10}
                 className="rounded-2xl border border-border bg-card p-6 md:p-8 shadow-lg"
               >
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                <div className="flex items-start justify-between gap-4 mb-4">
                   <h3 className="text-xl md:text-2xl font-bold text-foreground">
                     {servicio.title}
                   </h3>
-                  <span className="text-4xl md:text-5xl font-bold text-hero-accent/20">
+                  <span className="text-3xl md:text-4xl font-bold text-hero-accent shrink-0">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-2xl">
+                <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
                   {servicio.description}
                 </p>
               </CardSticky>
             ))}
-          </div>
-        </ContainerScroll>
+          </ContainerScroll>
+        </div>
       </div>
     </section>
   )
