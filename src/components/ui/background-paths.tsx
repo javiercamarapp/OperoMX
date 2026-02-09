@@ -18,7 +18,7 @@ function FloatingPaths({ position }: { position: number }) {
   }));
 
   return (
-    <div className="absolute inset-0 pointer-events-none top-[30%] sm:top-0 -left-[10%] -right-[10%] sm:left-0 sm:right-0 w-[120%] sm:w-full">
+    <div className="absolute inset-0 pointer-events-none top-[15%] sm:top-0 -left-[10%] -right-[10%] sm:left-0 sm:right-0 w-[120%] sm:w-full">
       <svg
         className="w-full h-full scale-[1.2] sm:scale-100 origin-center"
         viewBox="0 0 696 316"
