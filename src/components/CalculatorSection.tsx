@@ -228,6 +228,26 @@ export function CalculatorSection() {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Comparación con repartidor propio */}
+        {showResult && result && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mx-auto max-w-2xl bg-white rounded-2xl p-6 md:p-10 shadow-lg mt-6"
+          >
+            <h3 className="text-lg md:text-xl font-bold text-foreground mb-4">
+              💸 Comparación con repartidor propio
+            </h3>
+            <p className="text-muted-foreground text-sm md:text-base mb-4">
+              Un repartidor propio te costaría aprox. <span className="font-bold text-foreground">$10,000</span> al mes, además de seguro, prestaciones y riesgos laborales que recaen completamente en tu negocio.
+            </p>
+            <p className="text-muted-foreground text-sm md:text-base">
+              Con <span className="font-bold text-hero-accent">Opero</span> tienes capacidad de reparto bajo demanda, disponible 24/7, sin nómina, sin responsabilidades laborales y pagas únicamente por los envíos que realizas.
+            </p>
+          </motion.div>
+        )}
       </div>
     </section>
   );
