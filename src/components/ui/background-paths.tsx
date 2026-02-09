@@ -1,104 +1,103 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Typewriter } from "@/components/ui/typewriter-text";
-
-function FloatingPaths({ position }: { position: number }) {
-  const paths = Array.from({ length: 36 }, (_, i) => ({
-    id: i,
-    d: `M-${380 - i * 5 * position} -${189 + i * 6}C-${
-      380 - i * 5 * position
-    } -${189 + i * 6} -${312 - i * 5 * position} ${216 - i * 6} ${
-      152 - i * 5 * position
-    } ${343 - i * 6}C${616 - i * 5 * position} ${470 - i * 6} ${
-      684 - i * 5 * position
-    } ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`,
-    width: 0.5 + i * 0.03,
-  }));
-
-  return (
-    <div className="absolute inset-0 pointer-events-none">
-      <svg
-        className="w-full h-full"
-        viewBox="0 0 696 316"
-        fill="none"
-      >
-        <title>Background Paths</title>
-        {paths.map((path) => (
-          <motion.path
-            key={path.id}
-            d={path.d}
-            stroke="hsl(var(--hero-paths))"
-            strokeWidth={path.width}
-            strokeOpacity={0.15 + path.id * 0.025}
-            initial={{ pathLength: 0.3, opacity: 0.6 }}
-            animate={{
-              pathLength: 1,
-              opacity: [0.3, 0.6, 0.3],
-              pathOffset: [0, 1, 0],
-            }}
-            transition={{
-              duration: 20 + Math.random() * 10,
-              repeat: Number.POSITIVE_INFINITY,
-              ease: "linear",
-            }}
-          />
-        ))}
-      </svg>
-    </div>
-  );
-}
+import { Beams } from "@/components/ui/ethereal-beams";
+import { Star } from "lucide-react";
 
 export function BackgroundPaths() {
   return (
-    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-hero">
-      <div className="absolute inset-0">
-        <FloatingPaths position={1} />
-        <FloatingPaths position={-1} />
+    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-black">
+      {/* Beams Background */}
+      <div className="absolute inset-0 z-0">
+        <Beams
+          beamWidth={2}
+          beamHeight={15}
+          beamNumber={12}
+          lightColor="#FF5B48"
+          speed={2}
+          noiseIntensity={1.75}
+          scale={0.2}
+          rotation={0}
+        />
       </div>
 
+      {/* Hero Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-6 text-center">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold mb-8 tracking-tighter text-hero-foreground">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-8">
+            <Star className="w-4 h-4 text-hero-accent" />
+            <span className="text-white/90 text-sm font-medium">
+              Respaldado por líderes de la industria
+            </span>
+          </div>
+
+          {/* Main Heading */}
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold mb-8 tracking-tighter text-white">
             Tu reparto sin{" "}
-            <Typewriter
-              text={["complicaciones", "retrasos", "preocupaciones"]}
-              speed={80}
-              cursor="|"
-              loop={true}
-              delay={2000}
-              deleteSpeed={40}
-            />
+            <span className="text-hero-accent">
+              <Typewriter
+                text={["complicaciones", "retrasos", "preocupaciones"]}
+                speed={80}
+                cursor="|"
+                loop={true}
+                delay={2000}
+                deleteSpeed={40}
+              />
+            </span>
           </h1>
 
-          <div
-            className="inline-block group relative p-px rounded-2xl backdrop-blur-lg 
-            overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
-          >
+          {/* Subtitle */}
+          <p className="text-lg md:text-xl text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
+            Transforma tu logística con nuestra plataforma de vanguardia. Diseñada para negocios, construida para rendimiento, creada para la excelencia.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Button
               variant="ghost"
-              className="rounded-[1.15rem] px-8 py-6 text-lg font-semibold backdrop-blur-md 
+              className="rounded-full px-8 py-6 text-lg font-semibold 
               bg-hero-accent hover:bg-hero-accent/90 text-white transition-all duration-300 
-              group-hover:-translate-y-0.5 border-none
-              hover:shadow-md"
+              hover:scale-105 border-none shadow-lg shadow-hero-accent/25"
             >
-              <span className="opacity-90 group-hover:opacity-100 transition-opacity">
-                Empezar ahora
-              </span>
-              <span
-                className="ml-3 opacity-70 group-hover:opacity-100 group-hover:translate-x-1.5 
-                transition-all duration-300"
-              >
-                →
-              </span>
+              <span>Empezar ahora</span>
+              <span className="ml-2">→</span>
             </Button>
+            <Button
+              variant="ghost"
+              className="rounded-full px-8 py-6 text-lg font-semibold 
+              bg-white/5 hover:bg-white/10 text-white border border-white/20 
+              backdrop-blur-xl transition-all duration-300"
+            >
+              Más información
+            </Button>
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-3 gap-8 max-w-md mx-auto">
+            <div className="text-center">
+              <p className="text-3xl md:text-4xl font-bold text-white">1M+</p>
+              <p className="text-white/60 text-sm">Users</p>
+            </div>
+            <div className="text-center">
+              <p className="text-3xl md:text-4xl font-bold text-white">50+</p>
+              <p className="text-white/60 text-sm">Countries</p>
+            </div>
+            <div className="text-center">
+              <p className="text-3xl md:text-4xl font-bold text-white">24/7</p>
+              <p className="text-white/60 text-sm">Support</p>
+            </div>
           </div>
         </motion.div>
       </div>
+
+      {/* Gradient Overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/30 pointer-events-none z-[1]" />
     </div>
   );
 }
