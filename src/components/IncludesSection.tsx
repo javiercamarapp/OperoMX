@@ -82,25 +82,25 @@ function Feature({
   return (
     <div
       className={cn(
-        "flex flex-col py-8 px-5 relative group/feature border-b border-white/10 last:border-b-0",
+        "flex flex-col py-8 px-5 relative group/feature border-b border-border last:border-b-0",
         "lg:border-b-0",
-        "lg:border-r border-white/10 last:border-r-0"
+        "lg:border-r border-border last:border-r-0"
       )}
     >
       {/* top gradient on hover */}
-      <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-hero-accent/20 to-transparent pointer-events-none" />
+      <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-hero-accent/10 to-transparent pointer-events-none" />
 
       {/* bottom border accent on hover */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-hero-accent to-transparent opacity-0 group-hover/feature:opacity-100 transition duration-200" />
 
-      <div className="mb-4 relative z-10 text-white/60 group-hover/feature:text-hero-accent transition-colors duration-200">
+      <div className="mb-4 relative z-10 text-foreground/40 group-hover/feature:text-hero-accent transition-colors duration-200">
         {icon}
       </div>
       <div className="relative z-10">
-        <h4 className="text-lg font-bold text-white mb-2 group-hover/feature:text-hero-accent transition-colors duration-200">
+        <h4 className="text-lg font-bold text-foreground mb-2 group-hover/feature:text-hero-accent transition-colors duration-200">
           {title}
         </h4>
-        <p className="text-sm text-white/50 leading-relaxed">
+        <p className="text-sm text-muted-foreground leading-relaxed">
           {description}
         </p>
       </div>
@@ -110,13 +110,13 @@ function Feature({
 
 export function IncludesSection() {
   return (
-    <section className="bg-foreground px-4 md:px-8 lg:px-16 py-16 md:py-24">
+    <section className="bg-white px-4 md:px-8 lg:px-16 py-0">
       <div className="mx-auto max-w-6xl">
         <div className="text-center mb-12">
           <p className="text-hero-accent font-semibold text-sm tracking-wider uppercase mb-3">
             🔍 Todo incluido
           </p>
-          <h2 className="text-3xl md:text-5xl font-black text-white">
+          <h2 className="text-3xl md:text-5xl font-black text-foreground">
             Lo que incluye Opero
           </h2>
         </div>
