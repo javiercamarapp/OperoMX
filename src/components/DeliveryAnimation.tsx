@@ -4,12 +4,12 @@ import motoImage from "@/assets/moto.png";
 
 export function DeliveryAnimation() {
   return (
-    <div className="relative w-full h-40 mt-8 overflow-hidden">
+    <div className="relative w-full h-40 mt-8">
       {/* Road line */}
       <div className="absolute bottom-6 left-0 right-0 h-0.5 bg-muted-foreground/30" />
 
-      {/* Store icon - fixed position */}
-      <div className="absolute right-4 bottom-4">
+      {/* Store icon - fixed position on the right */}
+      <div className="absolute right-0 bottom-4">
         <div className="relative">
           <div className="w-14 h-14 rounded-lg bg-hero-accent/10 flex items-center justify-center border-2 border-hero-accent">
             <Store className="w-7 h-7 text-hero-accent" />
@@ -34,45 +34,45 @@ export function DeliveryAnimation() {
       <motion.div
         className="absolute bottom-8 left-0"
         animate={{
-          x: [0, "calc(100% - 80px)", 0],
-          scaleX: [1, 1, -1, -1, 1],
+          left: ["0%", "calc(100% - 80px)", "0%"],
         }}
         transition={{
-          x: {
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-            times: [0, 0.48, 1],
-          },
-          scaleX: {
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut",
-            times: [0, 0.47, 0.49, 0.99, 1],
-          },
+          duration: 4,
+          repeat: Infinity,
+          ease: "easeInOut",
         }}
-        style={{ width: "64px" }}
       >
         <motion.img
           src={motoImage}
           alt="Moto de delivery"
-          className="w-16 h-auto"
-          animate={{ y: [0, -2, 0] }}
+          className="w-16 h-auto origin-center"
+          animate={{ 
+            y: [0, -2, 0],
+            scaleX: [1, 1, -1, -1, 1],
+          }}
           transition={{
-            duration: 0.3,
-            repeat: Infinity,
-            ease: "easeInOut",
+            y: {
+              duration: 0.3,
+              repeat: Infinity,
+              ease: "easeInOut",
+            },
+            scaleX: {
+              duration: 4,
+              repeat: Infinity,
+              ease: "linear",
+              times: [0, 0.49, 0.50, 0.99, 1],
+            },
           }}
         />
       </motion.div>
 
       {/* Motion trail */}
       <motion.div
-        className="absolute bottom-7 h-0.5 bg-gradient-to-r from-transparent via-hero-accent/50 to-transparent rounded-full"
+        className="absolute bottom-7 left-0 h-0.5 bg-gradient-to-r from-transparent via-hero-accent/50 to-transparent rounded-full"
         animate={{
-          width: ["0%", "25%", "0%", "25%", "0%"],
-          x: ["0%", "55%", "75%", "25%", "0%"],
-          opacity: [0, 0.7, 0, 0.7, 0],
+          width: ["0%", "30%", "0%", "30%", "0%"],
+          left: ["0%", "35%", "65%", "30%", "0%"],
+          opacity: [0, 0.6, 0, 0.6, 0],
         }}
         transition={{
           duration: 4,
