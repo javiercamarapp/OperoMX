@@ -67,10 +67,7 @@ export function NavBar({ items, className }: NavBarProps) {
           <img
             src={logo}
             alt="Logo"
-            className={cn(
-              "h-12 md:h-32 w-auto transition-all duration-300",
-              isOverOrange && "brightness-0 invert"
-            )}
+            className="h-12 md:h-32 w-auto"
           />
         </Link>
 
@@ -92,12 +89,8 @@ export function NavBar({ items, className }: NavBarProps) {
                 onClick={() => setActiveTab(item.name)}
                 className={cn(
                   "relative cursor-pointer text-sm font-semibold px-4 md:px-6 py-2 rounded-full transition-colors",
-                  isOverOrange
-                    ? "text-white/90 hover:text-white"
-                    : "text-foreground/80 hover:text-hero-accent",
-                  isActive && (isOverOrange
-                    ? "bg-white/20 text-white"
-                    : "bg-hero-accent/10 text-hero-accent")
+                  "text-foreground/80 hover:text-hero-accent",
+                  isActive && "bg-hero-accent/10 text-hero-accent"
                 )}
               >
                 <span className="hidden md:inline">{item.name}</span>
@@ -107,10 +100,7 @@ export function NavBar({ items, className }: NavBarProps) {
                 {isActive && (
                   <motion.div
                     layoutId="lamp"
-                    className={cn(
-                      "absolute inset-0 w-full rounded-full -z-10",
-                      isOverOrange ? "bg-white/10" : "bg-hero-accent/5"
-                    )}
+                    className="absolute inset-0 w-full bg-hero-accent/5 rounded-full -z-10"
                     initial={false}
                     transition={{
                       type: "spring",
@@ -118,22 +108,10 @@ export function NavBar({ items, className }: NavBarProps) {
                       damping: 30,
                     }}
                   >
-                    <div className={cn(
-                      "absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 rounded-t-full",
-                      isOverOrange ? "bg-white" : "bg-hero-accent"
-                    )}>
-                      <div className={cn(
-                        "absolute w-12 h-6 rounded-full blur-md -top-2 -left-2",
-                        isOverOrange ? "bg-white/20" : "bg-hero-accent/20"
-                      )} />
-                      <div className={cn(
-                        "absolute w-8 h-6 rounded-full blur-md -top-1",
-                        isOverOrange ? "bg-white/20" : "bg-hero-accent/20"
-                      )} />
-                      <div className={cn(
-                        "absolute w-4 h-4 rounded-full blur-sm top-0 left-2",
-                        isOverOrange ? "bg-white/20" : "bg-hero-accent/20"
-                      )} />
+                    <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-hero-accent rounded-t-full">
+                      <div className="absolute w-12 h-6 bg-hero-accent/20 rounded-full blur-md -top-2 -left-2" />
+                      <div className="absolute w-8 h-6 bg-hero-accent/20 rounded-full blur-md -top-1" />
+                      <div className="absolute w-4 h-4 bg-hero-accent/20 rounded-full blur-sm top-0 left-2" />
                     </div>
                   </motion.div>
                 )}
