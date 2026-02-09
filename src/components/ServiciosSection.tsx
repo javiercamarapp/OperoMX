@@ -59,7 +59,7 @@ export function ServiciosSection() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Left Column - Sticky Header */}
-          <div className="sticky top-24 z-10 bg-background pb-6 lg:top-40 lg:h-fit">
+          <div className="relative lg:sticky lg:top-40 z-10 bg-background pb-6 lg:h-fit">
             <p className="text-hero-accent font-semibold text-sm uppercase tracking-wider mb-4">
               nuestros servicios
             </p>
@@ -82,13 +82,13 @@ export function ServiciosSection() {
           </div>
 
           {/* Right Column - Stacking Cards */}
-          <ContainerScroll className="gap-0 mt-64 lg:mt-0">
+          <ContainerScroll className="gap-4 lg:gap-0 mt-8 lg:mt-0">
             {SERVICIOS.map((servicio, index) => (
               <CardSticky
                 key={servicio.id}
                 index={index}
                 baseTop={220}
-                baseTopMobile={440}
+                baseTopMobile={80}
                 incrementY={20}
                 incrementZ={10}
                 className="rounded-2xl border border-border bg-card p-6 md:p-8 shadow-lg"
@@ -108,7 +108,7 @@ export function ServiciosSection() {
             ))}
 
             {/* Spacer: permite que las últimas cards alcancen su posición sticky */}
-            <div aria-hidden className="h-[200px] md:h-[440px]" />
+            <div aria-hidden className="h-[40px] lg:h-[440px]" />
           </ContainerScroll>
         </div>
       </div>
