@@ -58,7 +58,7 @@ export function BackgroundPaths() {
         <FloatingPaths position={-1} />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 md:px-6 text-center flex-1 flex flex-col justify-center">
+      <div className="relative z-10 container mx-auto px-4 md:px-6 text-center flex-1 flex flex-col justify-start pt-1 sm:pt-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -115,7 +115,7 @@ export function BackgroundPaths() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-3 sm:gap-8 max-w-xs sm:max-w-md mx-auto mb-1 sm:mb-4">
+          <div className="grid grid-cols-3 gap-3 sm:gap-8 max-w-xs sm:max-w-md mx-auto">
             <div className="text-center">
               <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-hero-foreground">1M+</p>
               <p className="text-hero-foreground/50 text-xs sm:text-sm">Users</p>
@@ -133,7 +133,7 @@ export function BackgroundPaths() {
       </div>
 
       {/* Animated Motorcycles - Full Width */}
-      <div className="relative z-10 w-screen overflow-hidden h-8 sm:h-14 md:h-20 flex items-center mt-1 sm:mt-4 md:mt-6">
+      <div className="relative z-10 w-screen overflow-hidden h-8 sm:h-14 md:h-20 flex items-center mt-1">
         <motion.div
           className="flex items-center gap-8 sm:gap-12 md:gap-20"
           animate={{ x: ["-50%", "0%"] }}
