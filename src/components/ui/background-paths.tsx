@@ -131,51 +131,21 @@ export function BackgroundPaths() {
           </div>
 
           {/* Animated Motorcycles */}
-          <div className="relative w-full overflow-hidden h-24 md:h-32">
-            {/* Moto 1 - Fast */}
-            <motion.img
-              src={motoImage}
-              alt="Moto de reparto 1"
-              className="absolute h-12 md:h-16 w-auto"
-              style={{ top: "0%" }}
-              initial={{ x: "-15%" }}
-              animate={{ x: "100vw" }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            />
-            {/* Moto 2 - Medium */}
-            <motion.img
-              src={motoImage}
-              alt="Moto de reparto 2"
-              className="absolute h-10 md:h-14 w-auto"
-              style={{ top: "35%" }}
-              initial={{ x: "-30%" }}
-              animate={{ x: "100vw" }}
-              transition={{
-                duration: 7,
-                repeat: Infinity,
-                ease: "linear",
-                delay: 1,
-              }}
-            />
-            {/* Moto 3 - Slow */}
-            <motion.img
-              src={motoImage}
-              alt="Moto de reparto 3"
-              className="absolute h-8 md:h-12 w-auto"
-              style={{ top: "70%" }}
+          <div className="relative w-full overflow-hidden h-16 md:h-20 flex items-center">
+            <motion.div
+              className="flex items-center gap-24 md:gap-32"
               initial={{ x: "-50%" }}
               animate={{ x: "100vw" }}
               transition={{
-                duration: 9,
+                duration: 8,
                 repeat: Infinity,
                 ease: "linear",
-                delay: 2,
               }}
-            />
+            >
+              <img src={motoImage} alt="Moto 1" className="h-12 md:h-16 w-auto" />
+              <img src={motoImage} alt="Moto 2" className="h-12 md:h-16 w-auto" />
+              <img src={motoImage} alt="Moto 3" className="h-12 md:h-16 w-auto" />
+            </motion.div>
           </div>
         </motion.div>
       </div>
