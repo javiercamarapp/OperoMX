@@ -50,13 +50,13 @@ export function FeatureSteps({
   const feature = features[currentFeature];
 
   return (
-    <div className={cn("p-8 md:p-12", className)}>
+    <div className={cn("p-5 md:p-8", className)}>
       <div className="max-w-7xl mx-auto w-full">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-center">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-center">
           {title}
         </h2>
 
-        <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-4 md:gap-8 items-center">
           {/* Text - Left */}
           <div className="order-2 md:order-1">
             <AnimatePresence mode="wait">
@@ -71,11 +71,11 @@ export function FeatureSteps({
                   {feature.step}
                 </span>
                 {feature.title && (
-                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mt-2 mb-4">
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground mt-1 mb-2">
                     {feature.title}
                   </h3>
                 )}
-                <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                   {feature.content}
                 </p>
               </motion.div>
@@ -109,7 +109,7 @@ export function FeatureSteps({
         </div>
 
         {/* Step buttons */}
-        <div className="flex flex-wrap justify-center gap-2 mt-8">
+        <div className="flex flex-wrap justify-center gap-2 mt-4">
           {features.map((f, index) => (
             <button
               key={index}
