@@ -1,24 +1,17 @@
 
-## Corregir el header y las cards en móvil
 
-### Problemas detectados
+## Cambiar el color de acento naranja a #f95655
 
-1. El contenedor del header tiene `z-[200]` y `bg-background` que lo hacen parecer un bloque blanco flotante incluso sin ser sticky en movil.
-2. Las cards siguen usando `sticky` en movil (el componente `CardSticky` aplica `sticky` en todas las resoluciones), lo que causa apilamiento innecesario.
+El color de acento actual (`--hero-accent`) se define como variable CSS, por lo que el cambio principal es en un solo lugar. Sin embargo, hay un color hardcodeado en la seccion de FAQ que tambien necesita actualizarse.
 
-### Cambios propuestos
+### Cambios
 
-**Archivo: `src/components/ServiciosSection.tsx`**
+**1. `src/index.css`** - Actualizar las variables CSS:
+- `--hero-accent`: de `8 100% 64%` a `0 94% 65%`
+- `--hero-paths`: de `8 100% 64%` a `0 94% 65%`
 
-- Quitar `z-[200]` y `bg-background` del header en movil, aplicandolos solo en desktop:
-  - Cambiar `z-[200] bg-background` a `lg:z-[200] lg:bg-background`
+**2. `src/components/FAQSection.tsx`** - Actualizar el color hardcodeado:
+- Cambiar `hsl(11, 80%, 62%)` a `hsl(0, 94%, 65%)` para que coincida con el nuevo color de acento
 
-**Archivo: `src/components/ui/cards-stack.tsx`**
+Estos dos cambios propagaran el nuevo color #f95655 a todos los componentes que usan `hero-accent`: la seccion de precios, el footer, la seccion de servicios, la animacion de entrega, la seccion de FAQ y la seccion de contacto.
 
-- Hacer que `CardSticky` solo sea `sticky` en desktop (lg+):
-  - Cambiar la clase de `sticky` a usar logica condicional: aplicar `lg:sticky` en lugar de `sticky`, de modo que en movil las cards fluyan normalmente sin apilarse.
-
-### Resultado esperado
-
-- En movil: el header es un bloque normal que fluye con el contenido, sin fondo blanco flotante. Las cards se muestran una debajo de otra de forma natural.
-- En desktop: todo sigue igual — header sticky, cards apilables con scroll.
