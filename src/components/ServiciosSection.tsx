@@ -59,11 +59,11 @@ export function ServiciosSection() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-16">
           {/* Left Column - Sticky on both mobile and desktop */}
-          <div className="sticky top-16 lg:top-40 z-10 bg-background pt-4 pb-4 lg:pb-6 self-start">
-            <p className="text-hero-accent font-semibold text-sm uppercase tracking-wider mb-2 lg:mb-4">
+          <div className="sticky top-16 lg:top-40 z-10 bg-background pt-4 pb-2 lg:pb-6 self-start">
+            <p className="text-hero-accent font-semibold text-xs lg:text-sm uppercase tracking-wider mb-1 lg:mb-4">
               nuestros servicios
             </p>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-2 lg:mb-6">
+            <h2 className="text-xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-1 lg:mb-6">
               Todo tu reparto,{" "}
               <AnimatedText 
                 text="bajo control" 
@@ -72,14 +72,12 @@ export function ServiciosSection() {
                 underlineDuration={1.2}
               />
             </h2>
-            <p className="text-muted-foreground text-sm lg:text-lg leading-relaxed hidden lg:block">
+            <p className="text-muted-foreground text-xs lg:text-lg leading-relaxed mb-1 lg:mb-0">
               Nuestra plataforma está diseñada para que gestiones tus envíos con total 
               tranquilidad, visibilidad y eficiencia. Sin complicaciones, sin improvisaciones.
             </p>
             
-            <div className="hidden lg:block">
-              <DeliveryAnimation />
-            </div>
+            <DeliveryAnimation />
           </div>
 
           {/* Right Column - Stacking Cards */}
@@ -89,7 +87,7 @@ export function ServiciosSection() {
                 key={servicio.id}
                 index={index}
                 baseTop={220}
-                baseTopMobile={140}
+                baseTopMobile={280}
                 incrementY={20}
                 incrementZ={10}
                 className="rounded-2xl border border-border bg-card p-4 md:p-8 shadow-lg"
