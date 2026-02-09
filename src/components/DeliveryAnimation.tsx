@@ -9,7 +9,7 @@ export function DeliveryAnimation() {
       {/* Store icon - fixed position on the right */}
       <div className="absolute right-0 bottom-6">
         <div className="relative">
-          <img src={localImage} alt="Local comercial" className="w-20 h-20 object-contain" />
+          <img src={localImage} alt="Local comercial" className="w-28 h-28 object-contain" />
           {/* Pulse effect */}
           <motion.div className="absolute inset-0 rounded-lg border-2 border-hero-accent" animate={{
           scale: [1, 1.3, 1],
