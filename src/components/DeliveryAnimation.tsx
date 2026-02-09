@@ -45,7 +45,7 @@ export function DeliveryAnimation() {
         <motion.img
           src={motoImage}
           alt="Moto de delivery"
-          className="w-16 h-auto origin-center"
+          className="w-24 h-auto origin-center"
           animate={{ 
             y: [0, -2, 0],
             scaleX: [1, 1, -1, -1, 1],
