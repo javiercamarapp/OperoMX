@@ -59,7 +59,7 @@ export function HowItWorksSection() {
           features={features}
           title="📋 Paso a paso — Cómo funciona Opero"
           autoPlayInterval={5000}
-          imageHeight="h-[180px] md:h-[350px]"
+          imageHeight="h-[150px] md:h-[350px]"
         />
         <p className="text-center text-muted-foreground text-xs md:text-sm px-6 pb-4 max-w-2xl mx-auto">
           Todo el proceso, de principio a fin, diseñado para que tus envíos diarios se entreguen en menos de 30 minutos.

@@ -50,13 +50,13 @@ export function FeatureSteps({
   const feature = features[currentFeature];
 
   return (
-    <div className={cn("p-5 md:p-8", className)}>
+    <div className={cn("p-3 md:p-8", className)}>
       <div className="max-w-7xl mx-auto w-full">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-center">
+        <h2 className="text-lg md:text-3xl lg:text-4xl font-bold mb-2 md:mb-4 text-center">
           {title}
         </h2>
 
-        <div className="flex flex-col md:grid md:grid-cols-2 gap-4 md:gap-8 items-center">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-2 md:gap-8 items-center">
           {/* Text - Left */}
           <div className="order-2 md:order-1">
             <AnimatePresence mode="wait">
@@ -67,15 +67,15 @@ export function FeatureSteps({
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
               >
-                <span className="text-sm font-bold text-hero-accent uppercase tracking-wider">
+                <span className="text-xs font-bold text-hero-accent uppercase tracking-wider">
                   {feature.step}
                 </span>
                 {feature.title && (
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground mt-1 mb-2">
+                  <h3 className="text-base md:text-2xl font-bold text-foreground mt-0.5 mb-1">
                     {feature.title}
                   </h3>
                 )}
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                <p className="text-xs md:text-base text-muted-foreground leading-relaxed">
                   {feature.content}
                 </p>
               </motion.div>
@@ -109,13 +109,13 @@ export function FeatureSteps({
         </div>
 
         {/* Step buttons */}
-        <div className="flex flex-wrap justify-center gap-2 mt-4">
+        <div className="flex flex-wrap justify-center gap-1.5 mt-2 md:mt-4">
           {features.map((f, index) => (
             <button
               key={index}
               onClick={() => goTo(index)}
               className={cn(
-                "relative px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 overflow-hidden",
+                "relative px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 overflow-hidden",
                 index === currentFeature
                   ? "bg-hero-accent text-white shadow-lg"
                   : "bg-muted text-muted-foreground hover:bg-muted/80"
