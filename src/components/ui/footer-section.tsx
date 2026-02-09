@@ -48,9 +48,14 @@ const footerLinks: FooterSection[] = [
 
 export function Footer() {
   return (
-    <footer className="bg-white border-t border-border/40 pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
-        {/* Top: Logo */}
+    <footer className="relative bg-white border-t border-border/40 pt-16 pb-8">
+      {/* Glowing bar */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+        <div className="w-32 h-2 bg-hero-accent rounded-full" />
+        <div className="w-48 h-8 bg-hero-accent/20 rounded-full blur-xl -mt-4" />
+        <div className="w-64 h-12 bg-hero-accent/10 rounded-full blur-2xl -mt-6" />
+      </div>
+        <div className="max-w-7xl mx-auto px-6 md:px-8">
         <AnimatedContainer>
           <img src={logo} alt="Logo" className="h-20 md:h-28 w-auto mb-10" />
         </AnimatedContainer>
