@@ -9,7 +9,7 @@ export function OperoCtaSection() {
           viewBox="0 0 1440 120"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-[40px] md:h-[80px]"
+          className="w-full h-[60px] md:h-[120px]"
           preserveAspectRatio="none"
         >
           <path
@@ -32,7 +32,7 @@ export function OperoCtaSection() {
           viewBox="0 0 1440 120"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-[40px] md:h-[80px]"
+          className="w-full h-[60px] md:h-[120px]"
           preserveAspectRatio="none"
         >
           <path
