@@ -53,7 +53,7 @@ const SERVICIOS = [
 
 export function ServiciosSection() {
   return (
-    <section className="bg-background py-16 md:py-24 pb-32 md:pb-48">
+    <section className="bg-background py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
           {/* Left Column - Sticky Header */}
@@ -72,7 +72,7 @@ export function ServiciosSection() {
           </div>
 
           {/* Right Column - Stacking Cards */}
-          <ContainerScroll className="gap-0 pb-[400px] md:pb-[500px]">
+          <ContainerScroll className="gap-0">
             {SERVICIOS.map((servicio, index) => (
               <CardSticky
                 key={servicio.id}
