@@ -67,7 +67,10 @@ export function NavBar({ items, className }: NavBarProps) {
           <img
             src={logo}
             alt="Logo"
-            className="h-12 md:h-32 w-auto"
+            className={cn(
+              "h-12 md:h-32 w-auto transition-all duration-300",
+              isOverOrange && "brightness-0 invert"
+            )}
           />
         </Link>
 
