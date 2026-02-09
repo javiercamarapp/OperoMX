@@ -16,7 +16,7 @@ export function PricingSection() {
           </div>
 
           <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
-            Precio basado en tu éxito
+            Precios claros para escalar, sin comisiones.
           </h2>
 
           <p className="max-w-2xl text-sm text-white/80 md:text-base">
