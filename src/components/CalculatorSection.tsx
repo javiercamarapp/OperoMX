@@ -55,7 +55,7 @@ export function CalculatorSection() {
                 value={[entregas]}
                 onValueChange={(val) => setEntregas(val[0])}
                 min={10}
-                max={1000}
+                max={10000}
                 step={10}
                 className="flex-1 [&_[role=slider]]:bg-hero-accent [&_[role=slider]]:border-hero-accent [&_[data-orientation=horizontal]>[data-orientation=horizontal]]:bg-hero-accent"
               />
@@ -65,7 +65,7 @@ export function CalculatorSection() {
             </div>
             <div className="flex justify-between text-xs text-muted-foreground mt-1">
               <span>10</span>
-              <span>1,000</span>
+              <span>10,000</span>
             </div>
           </div>
 
