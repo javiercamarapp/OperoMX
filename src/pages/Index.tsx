@@ -24,9 +24,18 @@ const Index = () => {
         <ServiciosSection />
       </div>
       <OperoCtaSection />
-      <HowItWorksSection />
-      <FAQSection />
-      <ContactSection />
+      <div id="como-funciona">
+        <HowItWorksSection />
+      </div>
+      <div id="precio">
+        <OperoCtaSection />
+      </div>
+      <div id="faq">
+        <FAQSection />
+      </div>
+      <div id="contacto">
+        <ContactSection />
+      </div>
     </>
   );
 };
