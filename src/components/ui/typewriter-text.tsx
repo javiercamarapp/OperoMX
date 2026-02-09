@@ -9,6 +9,8 @@ export interface TypewriterProps {
   deleteSpeed?: number;
   delay?: number;
   className?: string;
+  smallWords?: string[];
+  smallClassName?: string;
 }
 
 export function Typewriter({
@@ -19,6 +21,8 @@ export function Typewriter({
   deleteSpeed = 50,
   delay = 1500,
   className,
+  smallWords = [],
+  smallClassName = "",
 }: TypewriterProps) {
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -66,8 +70,12 @@ export function Typewriter({
     text,
   ]);
 
+  const isSmallWord = smallWords.some(word => 
+    currentText.toLowerCase() === word.toLowerCase()
+  );
+
   return (
-    <span className={className}>
+    <span className={`${className} ${isSmallWord ? smallClassName : ""}`}>
       {displayText}
       <span className="animate-pulse">{cursor}</span>
     </span>
