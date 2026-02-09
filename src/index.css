@@ -56,8 +56,8 @@ All colors MUST be HSL.
 
     --hero: 0 0% 100%;
     --hero-foreground: 0 0% 0%;
-    --hero-accent: 8 100% 64%;
-    --hero-paths: 8 100% 64%;
+    --hero-accent: 0 94% 65%;
+    --hero-paths: 0 94% 65%;
   }
 
   .dark {
