@@ -1,4 +1,5 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, MessageCircle } from "lucide-react";
+import { motion } from "framer-motion";
 
 const contactCards = [
   {
@@ -56,6 +57,33 @@ export function ContactSection() {
               </a>
             </div>
           ))}
+        </div>
+
+        {/* WhatsApp CTA */}
+        <div className="text-center mt-6 md:mt-12">
+          <p className="text-white/80 text-sm md:text-lg mb-4">
+            O mejor aún, contáctanos por WhatsApp y te atenderemos al instante.
+          </p>
+          <motion.a
+            href="https://wa.me/5215512345678"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.5, type: "spring" }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebe57] text-white font-bold text-base md:text-lg px-8 md:px-12 py-3 md:py-4 rounded-2xl shadow-lg shadow-[#25D366]/30 transition-colors"
+          >
+            <motion.div
+              animate={{ rotate: [0, -10, 10, -10, 0] }}
+              transition={{ repeat: Infinity, repeatDelay: 2, duration: 0.5 }}
+            >
+              <MessageCircle className="w-5 h-5 md:w-6 md:h-6" />
+            </motion.div>
+            Escríbenos por WhatsApp
+          </motion.a>
         </div>
       </div>
     </section>
