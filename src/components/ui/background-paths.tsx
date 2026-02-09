@@ -52,13 +52,13 @@ function FloatingPaths({ position }: { position: number }) {
 
 export function BackgroundPaths() {
   return (
-    <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-hero">
+    <div className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-hero pt-32 md:pt-40">
       <div className="absolute inset-0">
         <FloatingPaths position={1} />
         <FloatingPaths position={-1} />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 md:px-6 text-center">
+      <div className="relative z-10 container mx-auto px-4 md:px-6 text-center flex-1 flex flex-col justify-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -129,24 +129,24 @@ export function BackgroundPaths() {
               <p className="text-hero-foreground/50 text-sm">Support</p>
             </div>
           </div>
+        </motion.div>
+      </div>
 
-          {/* Animated Motorcycles */}
-          <div className="relative w-full overflow-hidden h-16 md:h-20 flex items-center">
-            <motion.div
-              className="flex items-center gap-24 md:gap-32"
-              initial={{ x: "-50%" }}
-              animate={{ x: "100vw" }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-            >
-              <img src={motoImage} alt="Moto 1" className="h-12 md:h-16 w-auto" />
-              <img src={motoImage} alt="Moto 2" className="h-12 md:h-16 w-auto" />
-              <img src={motoImage} alt="Moto 3" className="h-12 md:h-16 w-auto" />
-            </motion.div>
-          </div>
+      {/* Animated Motorcycles - Full Width */}
+      <div className="relative z-10 w-screen overflow-hidden h-16 md:h-20 flex items-center mb-8">
+        <motion.div
+          className="flex items-center gap-24 md:gap-40"
+          initial={{ x: "-40%" }}
+          animate={{ x: "100vw" }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        >
+          <img src={motoImage} alt="Moto 1" className="h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto 2" className="h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto 3" className="h-12 md:h-16 w-auto" />
         </motion.div>
       </div>
     </div>
