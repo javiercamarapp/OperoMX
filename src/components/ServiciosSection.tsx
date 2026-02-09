@@ -107,7 +107,7 @@ export function ServiciosSection() {
             ))}
 
             {/* Spacer grande para que todas las cards se junten antes de salir */}
-            <div aria-hidden className="h-[120vh] lg:h-[150vh]" />
+            <div aria-hidden className="h-[60vh] lg:h-[80vh]" />
           </ContainerScroll>
         </div>
       </div>
