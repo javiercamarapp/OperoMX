@@ -1,14 +1,14 @@
 
-## Agregar sombra sutil al recuadro naranja
+## Fix: Cards overlapping with sticky header on mobile
 
-Se agregara una clase de sombra al `div` naranja en `OperoCtaSection.tsx` para darle profundidad visual.
+**Problem**: On mobile, the stacking cards collide with the sticky header area (title, subtitle, and delivery animation) because `baseTopMobile` is set to 280px, which isn't enough to clear all the sticky content.
 
-### Cambio
+**Solution**: Increase the `baseTopMobile` value in `CardSticky` so the cards begin stacking below the full sticky header (including the animation).
 
-En `src/components/OperoCtaSection.tsx`, agregar `shadow-2xl` al div con `bg-hero-accent rounded-3xl`, resultando en:
+### Technical details
 
-```tsx
-<div className="mx-auto max-w-6xl bg-hero-accent rounded-3xl px-8 py-16 md:px-12 md:py-20 lg:px-16 lg:py-24 shadow-2xl">
-```
+**File: `src/components/ServiciosSection.tsx`**
+- Change `baseTopMobile` from `280` to `340` on the `CardSticky` component. This pushes the card stacking start point further down, clearing the title, subtitle, and motorcycle animation completely.
+- Reduce `incrementY` on mobile or keep it at 20 to ensure cards don't stack too far down the screen.
 
-Esto aplicara una sombra grande y difusa que le dara un efecto de elevacion natural al recuadro naranja sobre el fondo blanco.
+This is a single-line change — just updating the `baseTopMobile` prop value.
