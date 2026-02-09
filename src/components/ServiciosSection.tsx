@@ -107,8 +107,8 @@ export function ServiciosSection() {
               </CardSticky>
             ))}
 
-            {/* Spacer: permite que las últimas cards alcancen su posición sticky sin scroll "vacío" excesivo */}
-            <div aria-hidden style={{ height: (SERVICIOS.length - 1) * 20 + 300 }} />
+            {/* Spacer: permite que las últimas cards alcancen su posición sticky */}
+            <div aria-hidden className="h-[200px] md:h-[440px]" />
           </ContainerScroll>
         </div>
       </div>
