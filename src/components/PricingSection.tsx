@@ -55,7 +55,7 @@ Pagas una tarifa fija y utilizas toda la plataforma de Opero sin compromisos a l
                 </p>
                 <div className="flex items-baseline gap-1 mb-3">
                   <span className="text-sm text-white/70">$</span>
-                  <span className="text-3xl font-bold text-white">7.99</span>
+                  <span className="text-3xl font-bold text-white">2,000</span>
                   <span className="text-sm text-white/70">/mes</span>
                 </div>
                 <Button className="w-full bg-white text-hero-accent hover:bg-white/90 font-semibold">
