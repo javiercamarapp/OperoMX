@@ -70,9 +70,9 @@ function SpiralBackground() {
 
     const svgNS = "http://www.w3.org/2000/svg";
     const svg = document.createElementNS(svgNS, "svg");
-    svg.setAttribute("width", String(SIZE));
-    svg.setAttribute("height", String(SIZE));
     svg.setAttribute("viewBox", `0 0 ${SIZE} ${SIZE}`);
+    svg.setAttribute("width", "100%");
+    svg.setAttribute("height", "100%");
 
     for (let i = 0; i < N; i++) {
       const idx = i + 0.5;
