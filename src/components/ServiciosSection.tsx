@@ -77,8 +77,8 @@ export function ServiciosSection() {
               <CardSticky
                 key={servicio.id}
                 index={index}
-                baseTop={128}
-                incrementY={10}
+                baseTop={140}
+                incrementY={20}
                 incrementZ={10}
                 className="rounded-2xl border border-border bg-card p-6 md:p-8 shadow-lg"
               >
@@ -96,8 +96,8 @@ export function ServiciosSection() {
               </CardSticky>
             ))}
 
-            {/* Spacer: permite que las últimas cards alcancen su posición sticky sin scroll “vacío” excesivo */}
-            <div aria-hidden style={{ height: (SERVICIOS.length - 1) * 10 + 180 }} />
+            {/* Spacer: permite que las últimas cards alcancen su posición sticky sin scroll "vacío" excesivo */}
+            <div aria-hidden style={{ height: (SERVICIOS.length - 1) * 20 + 300 }} />
           </ContainerScroll>
         </div>
       </div>
