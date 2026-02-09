@@ -55,15 +55,15 @@ const SERVICIOS = [
 
 export function ServiciosSection() {
   return (
-    <section className="bg-background py-16 md:py-24">
+    <section className="bg-background min-h-screen lg:min-h-0 py-0 lg:py-24">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-          {/* Left Column - Sticky */}
-          <div className="lg:sticky lg:top-40 z-10 bg-background pb-6 self-start">
-            <p className="text-hero-accent font-semibold text-sm uppercase tracking-wider mb-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-16">
+          {/* Left Column - Sticky on both mobile and desktop */}
+          <div className="sticky top-16 lg:top-40 z-10 bg-background pt-4 pb-4 lg:pb-6 self-start">
+            <p className="text-hero-accent font-semibold text-sm uppercase tracking-wider mb-2 lg:mb-4">
               nuestros servicios
             </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-foreground mb-2 lg:mb-6">
               Todo tu reparto,{" "}
               <AnimatedText 
                 text="bajo control" 
@@ -72,12 +72,14 @@ export function ServiciosSection() {
                 underlineDuration={1.2}
               />
             </h2>
-            <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+            <p className="text-muted-foreground text-sm lg:text-lg leading-relaxed hidden lg:block">
               Nuestra plataforma está diseñada para que gestiones tus envíos con total 
               tranquilidad, visibilidad y eficiencia. Sin complicaciones, sin improvisaciones.
             </p>
             
-            <DeliveryAnimation />
+            <div className="hidden lg:block">
+              <DeliveryAnimation />
+            </div>
           </div>
 
           {/* Right Column - Stacking Cards */}
@@ -87,20 +89,20 @@ export function ServiciosSection() {
                 key={servicio.id}
                 index={index}
                 baseTop={220}
-                baseTopMobile={80}
+                baseTopMobile={140}
                 incrementY={20}
                 incrementZ={10}
-                className="rounded-2xl border border-border bg-card p-6 md:p-8 shadow-lg"
+                className="rounded-2xl border border-border bg-card p-4 md:p-8 shadow-lg"
               >
-                <div className="flex items-start justify-between gap-4 mb-4">
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground">
+                <div className="flex items-start justify-between gap-4 mb-2 md:mb-4">
+                  <h3 className="text-lg md:text-2xl font-bold text-foreground">
                     {servicio.title}
                   </h3>
-                  <span className="text-3xl md:text-4xl font-bold text-hero-accent shrink-0">
+                  <span className="text-2xl md:text-4xl font-bold text-hero-accent shrink-0">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+                <p className="text-muted-foreground text-sm md:text-lg leading-relaxed">
                   {servicio.description}
                 </p>
               </CardSticky>
