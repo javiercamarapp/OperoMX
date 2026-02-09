@@ -3,6 +3,7 @@ import { NavBar } from "@/components/ui/tubelight-navbar";
 import { ServiciosSection } from "@/components/ServiciosSection";
 import { OperoCtaSection } from "@/components/OperoCtaSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
+import { PricingSection } from "@/components/PricingSection";
 import { ContactSection } from "@/components/ContactSection";
 import { FAQSection } from "@/components/FAQSection";
 import { Footer } from "@/components/ui/footer-section";
@@ -24,11 +25,12 @@ const Index = () => {
       <div id="servicios">
         <ServiciosSection />
       </div>
-      <div id="precio">
-        <OperoCtaSection />
-      </div>
+      <OperoCtaSection />
       <div id="como-funciona">
         <HowItWorksSection />
+      </div>
+      <div id="precio">
+        <PricingSection />
       </div>
       <div id="faq">
         <FAQSection />
