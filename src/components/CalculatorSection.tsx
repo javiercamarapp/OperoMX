@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { Input } from "@/components/ui/input";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
 const COSTO_OPERO = 55;
@@ -87,57 +88,82 @@ export function CalculatorSection() {
         </div>
 
         {/* Results */}
-        {showResult && result && (
-          <div className="mx-auto max-w-2xl bg-white rounded-2xl p-6 md:p-10 shadow-lg mt-6 text-center">
-            <div className="text-4xl mb-4">🚴‍♂️</div>
+        <AnimatePresence>
+          {showResult && result && (
+            <motion.div
+              initial={{ opacity: 0, y: 30, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -20, scale: 0.95 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              className="mx-auto max-w-2xl bg-white rounded-2xl p-6 md:p-10 shadow-lg mt-6 text-center"
+            >
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+                className="text-4xl mb-4"
+              >
+                🚴‍♂️
+              </motion.div>
 
-            {result.esGanancia ? (
-              <>
-                <p className="text-foreground text-base md:text-lg mb-2">
-                  ¡Sí! Tus envíos ya te generan ganancia adicional 🤑
-                </p>
-                <p className="text-muted-foreground text-sm md:text-base mb-6">
-                  Tu cliente pagará <span className="font-bold text-foreground">${numPrecio}</span> por envío
-                  y tú ganarás <span className="font-bold text-hero-accent">${result.gananciaPorEnvio}</span> extra por cada entrega.
-                </p>
-                <p className="text-hero-accent text-5xl md:text-6xl font-bold mb-1">
-                  ${result.gananciaTotal.toLocaleString("es-MX")}
-                </p>
-                <p className="text-muted-foreground text-sm mb-2">de ganancia extra por mes</p>
-                <p className="text-muted-foreground text-xs mb-6">
-                  Membresía mensual: ${MEMBRESIA.toLocaleString("es-MX")} MXN
-                </p>
-              </>
-            ) : (
-              <>
-                <p className="text-foreground text-base md:text-lg mb-2">
-                  Esto es lo que pagarías con Opero por mes, considerando la membresía y el costo de los envíos.
-                </p>
-                <p className="text-muted-foreground text-sm md:text-base mb-2">
-                  Opero tiene una tarifa fija de <span className="font-bold text-foreground">$55</span> por cada envío.
-                </p>
-                <p className="text-muted-foreground text-sm md:text-base mb-6">
-                  Tu cliente pagará <span className="font-bold text-foreground">${numPrecio}</span> por envío
-                  y tú estarás subsidiando <span className="font-bold text-hero-accent">${result.subsidioPorEnvio}</span> por cada
-                  entrega para hacerlo más atractivo.
-                </p>
-                <p className="text-hero-accent text-5xl md:text-6xl font-bold mb-1">
-                  ${result.totalMensual.toLocaleString("es-MX")}
-                </p>
-                <p className="text-muted-foreground text-sm mb-6">por mes</p>
-              </>
-            )}
+              {result.esGanancia ? (
+                <>
+                  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="text-foreground text-base md:text-lg mb-2">
+                    ¡Sí! Tus envíos ya te generan ganancia adicional 🤑
+                  </motion.p>
+                  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="text-muted-foreground text-sm md:text-base mb-6">
+                    Tu cliente pagará <span className="font-bold text-foreground">${numPrecio}</span> por envío
+                    y tú ganarás <span className="font-bold text-hero-accent">${result.gananciaPorEnvio}</span> extra por cada entrega.
+                  </motion.p>
+                  <motion.p
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.5, type: "spring", stiffness: 150 }}
+                    className="text-hero-accent text-5xl md:text-6xl font-bold mb-1"
+                  >
+                    ${result.gananciaTotal.toLocaleString("es-MX")}
+                  </motion.p>
+                  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="text-muted-foreground text-sm mb-2">de ganancia extra por mes</motion.p>
+                  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.65 }} className="text-muted-foreground text-xs mb-6">
+                    Membresía mensual: ${MEMBRESIA.toLocaleString("es-MX")} MXN
+                  </motion.p>
+                </>
+              ) : (
+                <>
+                  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="text-foreground text-base md:text-lg mb-2">
+                    Esto es lo que pagarías con Opero por mes, considerando la membresía y el costo de los envíos.
+                  </motion.p>
+                  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="text-muted-foreground text-sm md:text-base mb-2">
+                    Opero tiene una tarifa fija de <span className="font-bold text-foreground">$55</span> por cada envío.
+                  </motion.p>
+                  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.45 }} className="text-muted-foreground text-sm md:text-base mb-6">
+                    Tu cliente pagará <span className="font-bold text-foreground">${numPrecio}</span> por envío
+                    y tú estarás subsidiando <span className="font-bold text-hero-accent">${result.subsidioPorEnvio}</span> por cada
+                    entrega para hacerlo más atractivo.
+                  </motion.p>
+                  <motion.p
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.5, type: "spring", stiffness: 150 }}
+                    className="text-hero-accent text-5xl md:text-6xl font-bold mb-1"
+                  >
+                    ${result.totalMensual.toLocaleString("es-MX")}
+                  </motion.p>
+                  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="text-muted-foreground text-sm mb-6">por mes</motion.p>
+                </>
+              )}
 
-            <div className="border-t border-border pt-6">
-              <p className="text-foreground font-semibold text-base md:text-lg">
-                ¿Te gustaría escalar tus envíos y tener acceso inmediato a capacidad de reparto bajo demanda, sin contratar ni gestionar repartidores?
-              </p>
-              <Button className="mt-4 bg-hero-accent hover:bg-hero-accent/90 text-white font-semibold px-8 h-12 text-base rounded-xl">
-                Agendar demo
-              </Button>
-            </div>
-          </div>
-        )}
+              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }} className="border-t border-border pt-6">
+                <p className="text-foreground font-semibold text-base md:text-lg">
+                  ¿Te gustaría escalar tus envíos y tener acceso inmediato a capacidad de reparto bajo demanda, sin contratar ni gestionar repartidores?
+                </p>
+                <Button className="mt-4 bg-hero-accent hover:bg-hero-accent/90 text-white font-semibold px-8 h-12 text-base rounded-xl">
+                  Agendar demo
+                </Button>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );
