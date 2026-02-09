@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { Store } from "lucide-react";
 import motoImage from "@/assets/moto.png";
+import localImage from "@/assets/local-comercial.png";
 export function DeliveryAnimation() {
   return <div className="relative w-full h-44 mt-2">
       {/* Road line */}
