@@ -52,7 +52,7 @@ function FloatingPaths({ position }: { position: number }) {
 
 export function BackgroundPaths() {
   return (
-    <div className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-hero pt-8 sm:pt-20 md:pt-28 pb-4 px-4">
+    <div className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-hero pt-2 sm:pt-20 md:pt-28 pb-4 px-4">
       <div className="absolute inset-0">
         <FloatingPaths position={1} />
         <FloatingPaths position={-1} />
@@ -74,7 +74,7 @@ export function BackgroundPaths() {
           </div>
 
           {/* Main Heading - Two lines on mobile */}
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-8 tracking-tighter text-hero-foreground">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-8 tracking-tighter text-hero-foreground">
             <span className="block sm:inline">Tu reparto sin</span>{" "}
             <span className="text-hero-accent">
               <Typewriter
