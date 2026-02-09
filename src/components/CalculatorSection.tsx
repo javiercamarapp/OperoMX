@@ -17,13 +17,16 @@ export function CalculatorSection() {
 
   const result = useMemo(() => {
     if (!showResult) return null;
-    const subsidioPorEnvio = Math.max(0, COSTO_OPERO - numPrecio);
-    const gananciaPorEnvio = Math.max(0, numPrecio - COSTO_OPERO);
-    const costoSubsidioTotal = subsidioPorEnvio * numEntregas;
-    const gananciaTotal = gananciaPorEnvio * numEntregas;
-    const totalMensual = MEMBRESIA + costoSubsidioTotal;
-    const esGanancia = numPrecio >= COSTO_OPERO;
-    return { subsidioPorEnvio, gananciaPorEnvio, gananciaTotal, totalMensual, esGanancia };
+    const diferenciaPorEnvio = numPrecio - COSTO_OPERO; // positivo = ganancia, negativo = subsidio
+    const totalEnvios = diferenciaPorEnvio * numEntregas; // ganancia o ahorro de envíos
+    const neto = totalEnvios - MEMBRESIA; // descontando membresía
+    const esGanancia = neto >= 0;
+    return {
+      diferenciaPorEnvio: Math.abs(diferenciaPorEnvio),
+      neto: Math.abs(neto),
+      totalMensual: MEMBRESIA + Math.max(0, -diferenciaPorEnvio) * numEntregas,
+      esGanancia,
+    };
   }, [numEntregas, numPrecio, showResult]);
 
   return (
@@ -122,11 +125,11 @@ export function CalculatorSection() {
               {result.esGanancia ? (
                 <>
                   <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="text-foreground text-base md:text-lg mb-2">
-                    ¡Sí! Tus envíos ya te generan ganancia adicional 🤑
+                    ¡Sí! Tus envíos ya te generan ganancia adicional (descontando membresía) 🤑
                   </motion.p>
                   <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }} className="text-muted-foreground text-sm md:text-base mb-6">
                     Tu cliente pagará <span className="font-bold text-foreground">${numPrecio}</span> por envío
-                    y tú ganarás <span className="font-bold text-hero-accent">${result.gananciaPorEnvio}</span> extra por cada entrega.
+                    y tú ganarás <span className="font-bold text-hero-accent">${result.diferenciaPorEnvio}</span> extra por cada entrega.
                   </motion.p>
                   <motion.p
                     initial={{ opacity: 0, scale: 0.5 }}
@@ -134,11 +137,11 @@ export function CalculatorSection() {
                     transition={{ delay: 0.5, type: "spring", stiffness: 150 }}
                     className="text-hero-accent text-5xl md:text-6xl font-bold mb-1"
                   >
-                    ${result.gananciaTotal.toLocaleString("es-MX")}
+                    ${result.neto.toLocaleString("es-MX")}
                   </motion.p>
-                  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="text-muted-foreground text-sm mb-2">de ganancia extra por mes</motion.p>
+                  <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }} className="text-muted-foreground text-sm mb-2">de ganancia neta por mes</motion.p>
                   <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.65 }} className="text-muted-foreground text-xs mb-6">
-                    Membresía mensual: ${MEMBRESIA.toLocaleString("es-MX")} MXN
+                    Ya incluye membresía de ${MEMBRESIA.toLocaleString("es-MX")} MXN
                   </motion.p>
                 </>
               ) : (
@@ -151,7 +154,7 @@ export function CalculatorSection() {
                   </motion.p>
                   <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.45 }} className="text-muted-foreground text-sm md:text-base mb-6">
                     Tu cliente pagará <span className="font-bold text-foreground">${numPrecio}</span> por envío
-                    y tú estarás subsidiando <span className="font-bold text-hero-accent">${result.subsidioPorEnvio}</span> por cada
+                    y tú estarás subsidiando <span className="font-bold text-hero-accent">${result.diferenciaPorEnvio}</span> por cada
                     entrega para hacerlo más atractivo.
                   </motion.p>
                   <motion.p
