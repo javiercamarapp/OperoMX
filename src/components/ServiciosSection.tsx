@@ -86,9 +86,9 @@ export function ServiciosSection() {
               <CardSticky
                 key={servicio.id}
                 index={index}
-                baseTop={220}
+                baseTop={140}
                 baseTopMobile={80}
-                incrementY={20}
+                incrementY={14}
                 incrementZ={10}
                 className="rounded-2xl border border-border bg-card p-6 md:p-8 shadow-lg"
               >
