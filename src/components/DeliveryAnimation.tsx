@@ -6,13 +6,13 @@ export function DeliveryAnimation() {
   return (
     <div className="relative w-full h-40 mt-8 overflow-hidden">
       {/* Road line */}
-      <div className="absolute bottom-10 left-0 right-0 h-0.5 bg-muted-foreground/20" />
+      <div className="absolute bottom-6 left-0 right-0 h-0.5 bg-muted-foreground/30" />
 
       {/* Store icon - fixed position */}
-      <div className="absolute right-8 bottom-6">
+      <div className="absolute right-4 bottom-4">
         <div className="relative">
-          <div className="w-16 h-16 rounded-lg bg-hero-accent/10 flex items-center justify-center border-2 border-hero-accent">
-            <Store className="w-8 h-8 text-hero-accent" />
+          <div className="w-14 h-14 rounded-lg bg-hero-accent/10 flex items-center justify-center border-2 border-hero-accent">
+            <Store className="w-7 h-7 text-hero-accent" />
           </div>
           {/* Pulse effect */}
           <motion.div
@@ -32,9 +32,9 @@ export function DeliveryAnimation() {
 
       {/* Motorcycle animation - ida y vuelta */}
       <motion.div
-        className="absolute bottom-2"
+        className="absolute bottom-8"
         animate={{
-          x: ["0%", "calc(100% - 140px)", "0%"],
+          x: ["0%", "calc(100% - 100px)", "0%"],
           scaleX: [1, 1, -1, -1, 1],
         }}
         transition={{
@@ -55,10 +55,10 @@ export function DeliveryAnimation() {
         <motion.img
           src={motoImage}
           alt="Moto de delivery"
-          className="w-20 h-auto"
-          animate={{ y: [0, -3, 0] }}
+          className="w-16 h-auto"
+          animate={{ y: [0, -2, 0] }}
           transition={{
-            duration: 0.4,
+            duration: 0.3,
             repeat: Infinity,
             ease: "easeInOut",
           }}
@@ -67,11 +67,11 @@ export function DeliveryAnimation() {
 
       {/* Motion trail */}
       <motion.div
-        className="absolute bottom-8 h-1 bg-gradient-to-r from-transparent via-hero-accent/40 to-transparent rounded-full"
+        className="absolute bottom-7 h-0.5 bg-gradient-to-r from-transparent via-hero-accent/50 to-transparent rounded-full"
         animate={{
-          width: ["0%", "30%", "0%", "30%", "0%"],
-          x: ["0%", "50%", "70%", "20%", "0%"],
-          opacity: [0, 0.6, 0, 0.6, 0],
+          width: ["0%", "25%", "0%", "25%", "0%"],
+          x: ["0%", "55%", "75%", "25%", "0%"],
+          opacity: [0, 0.7, 0, 0.7, 0],
         }}
         transition={{
           duration: 4,
