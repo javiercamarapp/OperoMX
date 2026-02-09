@@ -57,7 +57,7 @@ export function NavBar({ items, className }: NavBarProps) {
   return (
     <div
       className={cn(
-        "fixed top-0 left-0 right-0 z-[200] px-4 md:px-8 pt-4 transition-colors duration-300",
+        "fixed top-0 left-0 right-0 z-[300] px-4 md:px-8 pt-4 transition-colors duration-300",
         className
       )}
     >
