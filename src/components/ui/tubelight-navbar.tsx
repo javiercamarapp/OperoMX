@@ -43,7 +43,7 @@ export function NavBar({ items, className }: NavBarProps) {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo - Separated */}
         <Link to="/" className="flex-shrink-0">
-          <img src={logo} alt="Logo" className="h-12 md:h-96 w-auto" />
+          <img src={logo} alt="Logo" className="h-12 md:h-32 w-auto" />
         </Link>
 
         {/* Centered Navigation Menu */}
