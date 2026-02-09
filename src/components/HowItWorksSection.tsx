@@ -53,13 +53,13 @@ const features = [
 
 export function HowItWorksSection() {
   return (
-    <section id="como-funciona" className="relative px-2 md:px-8 lg:px-16 pt-14 md:pt-20 pb-2 md:pb-8 h-screen flex items-stretch">
+    <section id="como-funciona" className="relative px-4 md:px-8 lg:px-16 pt-14 md:pt-20 pb-2 md:pb-8 h-screen flex items-stretch">
       <div className="mx-auto max-w-6xl w-full bg-card rounded-2xl md:rounded-3xl shadow-2xl border border-border overflow-hidden flex flex-col mt-1">
         <FeatureSteps
           features={features}
           title="📋 Paso a paso — Cómo funciona Opero"
           autoPlayInterval={5000}
-          imageHeight="h-[150px] md:h-[350px]"
+          imageHeight="h-[180px] md:h-[350px]"
         />
         <p className="text-center text-muted-foreground text-xs md:text-sm px-6 pb-4 max-w-2xl mx-auto">
           Todo el proceso, de principio a fin, diseñado para que tus envíos diarios se entreguen en menos de 30 minutos.
