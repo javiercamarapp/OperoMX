@@ -9,10 +9,10 @@ const MEMBRESIA = 2000;
 
 export function CalculatorSection() {
   const [entregas, setEntregas] = useState(100);
-  const [precio, setPrecio] = useState("");
+  const [precio, setPrecio] = useState(50);
 
   const numEntregas = entregas;
-  const numPrecio = Number(precio) || 0;
+  const numPrecio = precio;
   const showResult = numEntregas > 0 && numPrecio > 0;
 
   const result = useMemo(() => {
@@ -77,20 +77,22 @@ export function CalculatorSection() {
               </span>
               ¿Cuánto cobras a tus clientes por envío?
             </label>
-            <div className="relative">
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground text-lg font-medium">
-                $
-              </span>
-              <Input
-                type="number"
-                placeholder="50"
-                value={precio}
-                onChange={(e) => setPrecio(e.target.value)}
-                className="h-14 text-lg rounded-xl border-border bg-muted/30 pl-9 pr-16 focus:ring-hero-accent focus:border-hero-accent"
+            <div className="flex items-center gap-4">
+              <Slider
+                value={[precio]}
+                onValueChange={(val) => setPrecio(val[0])}
+                min={0}
+                max={150}
+                step={5}
+                className="flex-1 [&_[role=slider]]:bg-hero-accent [&_[role=slider]]:border-hero-accent [&_[data-orientation=horizontal]>[data-orientation=horizontal]]:bg-hero-accent"
               />
-              <span className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground text-sm font-medium">
-                MXN
+              <span className="min-w-[70px] text-center text-xl font-bold text-hero-accent bg-hero-accent/10 rounded-lg px-3 py-2">
+                ${precio}
               </span>
+            </div>
+            <div className="flex justify-between text-xs text-muted-foreground mt-1">
+              <span>$0</span>
+              <span>$150</span>
             </div>
             <p className="mt-2 text-muted-foreground text-sm italic">
               💡 Te recomendamos cobrar al menos $35 pesos por envío.
