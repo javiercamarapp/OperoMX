@@ -59,7 +59,7 @@ export function ServiciosSection() {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-16">
           {/* Left Column - Sticky on both mobile and desktop */}
-          <div className="lg:sticky lg:top-40 z-[200] bg-background pt-2 pb-1 lg:pt-4 lg:pb-6 self-start">
+          <div className="lg:sticky lg:top-40 lg:z-[200] lg:bg-background pt-2 pb-1 lg:pt-4 lg:pb-6 self-start">
             <p className="text-hero-accent font-semibold text-xs lg:text-sm uppercase tracking-wider mb-1 lg:mb-4">
               nuestros servicios
             </p>
