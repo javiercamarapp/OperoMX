@@ -32,9 +32,9 @@ export function DeliveryAnimation() {
 
       {/* Motorcycle animation - ida y vuelta */}
       <motion.div
-        className="absolute bottom-8"
+        className="absolute bottom-8 left-0"
         animate={{
-          x: ["0%", "calc(100% - 100px)", "0%"],
+          x: [0, "calc(100% - 80px)", 0],
           scaleX: [1, 1, -1, -1, 1],
         }}
         transition={{
@@ -42,15 +42,16 @@ export function DeliveryAnimation() {
             duration: 4,
             repeat: Infinity,
             ease: "easeInOut",
-            times: [0, 0.45, 1],
+            times: [0, 0.48, 1],
           },
           scaleX: {
             duration: 4,
             repeat: Infinity,
             ease: "easeInOut",
-            times: [0, 0.44, 0.46, 0.99, 1],
+            times: [0, 0.47, 0.49, 0.99, 1],
           },
         }}
+        style={{ width: "64px" }}
       >
         <motion.img
           src={motoImage}
