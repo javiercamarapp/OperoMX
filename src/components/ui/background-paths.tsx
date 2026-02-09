@@ -147,27 +147,27 @@ export function BackgroundPaths() {
             repeatType: "loop",
           }}
         >
-          {/* Motos suficientes para cubrir todo el ancho sin espacios */}
-          <img src={motoImage} alt="Moto" className="h-8 sm:h-12 md:h-16 w-auto" />
-          <img src={motoImage} alt="Moto" className="h-8 sm:h-12 md:h-16 w-auto" />
-          <img src={motoImage} alt="Moto" className="h-8 sm:h-12 md:h-16 w-auto" />
-          <img src={motoImage} alt="Moto" className="h-8 sm:h-12 md:h-16 w-auto" />
-          <img src={motoImage} alt="Moto" className="h-8 sm:h-12 md:h-16 w-auto" />
-          <img src={motoImage} alt="Moto" className="h-8 sm:h-12 md:h-16 w-auto" />
-          <img src={motoImage} alt="Moto" className="h-8 sm:h-12 md:h-16 w-auto" />
-          <img src={motoImage} alt="Moto" className="h-8 sm:h-12 md:h-16 w-auto" />
-          <img src={motoImage} alt="Moto" className="h-8 sm:h-12 md:h-16 w-auto" />
-          <img src={motoImage} alt="Moto" className="h-8 sm:h-12 md:h-16 w-auto" />
-          <img src={motoImage} alt="Moto" className="h-8 sm:h-12 md:h-16 w-auto" />
-          <img src={motoImage} alt="Moto" className="h-8 sm:h-12 md:h-16 w-auto" />
-          <img src={motoImage} alt="Moto" className="h-8 sm:h-12 md:h-16 w-auto" />
-          <img src={motoImage} alt="Moto" className="h-8 sm:h-12 md:h-16 w-auto" />
-          <img src={motoImage} alt="Moto" className="h-8 sm:h-12 md:h-16 w-auto" />
-          <img src={motoImage} alt="Moto" className="h-8 sm:h-12 md:h-16 w-auto" />
-          <img src={motoImage} alt="Moto" className="h-8 sm:h-12 md:h-16 w-auto" />
-          <img src={motoImage} alt="Moto" className="h-8 sm:h-12 md:h-16 w-auto" />
-          <img src={motoImage} alt="Moto" className="h-8 sm:h-12 md:h-16 w-auto" />
-          <img src={motoImage} alt="Moto" className="h-8 sm:h-12 md:h-16 w-auto" />
+      {/* Motos suficientes para cubrir todo el ancho sin espacios */}
+          <img src={motoImage} alt="Moto" className="h-16 sm:h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-16 sm:h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-16 sm:h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-16 sm:h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-16 sm:h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-16 sm:h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-16 sm:h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-16 sm:h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-16 sm:h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-16 sm:h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-16 sm:h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-16 sm:h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-16 sm:h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-16 sm:h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-16 sm:h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-16 sm:h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-16 sm:h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-16 sm:h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-16 sm:h-12 md:h-16 w-auto" />
+          <img src={motoImage} alt="Moto" className="h-16 sm:h-12 md:h-16 w-auto" />
         </motion.div>
       </div>
     </div>
