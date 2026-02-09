@@ -2,13 +2,14 @@ import { BackgroundPaths } from "@/components/ui/background-paths";
 import { NavBar } from "@/components/ui/tubelight-navbar";
 import { ServiciosSection } from "@/components/ServiciosSection";
 import { OperoCtaSection } from "@/components/OperoCtaSection";
+import { ContactSection } from "@/components/ContactSection";
 import { Home, Truck, Users, Mail } from "lucide-react";
 
 const navItems = [
   { name: "Inicio", url: "#", icon: Home },
   { name: "Servicios", url: "#servicios", icon: Truck },
   { name: "Nosotros", url: "#", icon: Users },
-  { name: "Contacto", url: "#", icon: Mail },
+  { name: "Contacto", url: "#contacto", icon: Mail },
 ];
 
 const Index = () => {
@@ -20,6 +21,7 @@ const Index = () => {
         <ServiciosSection />
       </div>
       <OperoCtaSection />
+      <ContactSection />
     </>
   );
 };
