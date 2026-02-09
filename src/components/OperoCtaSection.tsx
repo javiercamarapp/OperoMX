@@ -6,14 +6,14 @@ export function OperoCtaSection() {
       {/* Top wave */}
       <div className="relative -mb-1">
         <svg
-          viewBox="0 0 1440 30"
+          viewBox="0 0 1440 80"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-[8px] md:h-[16px]"
+          className="w-full h-[40px] md:h-[80px]"
           preserveAspectRatio="none"
         >
           <path
-            d="M0,30 C240,10 480,25 720,15 C960,5 1200,20 1440,10 L1440,30 L0,30 Z"
+            d="M0,80 C360,0 720,70 1080,10 C1260,0 1380,30 1440,20 L1440,80 L0,80 Z"
             fill="hsl(var(--hero-accent))"
           />
         </svg>
@@ -29,14 +29,14 @@ export function OperoCtaSection() {
       {/* Bottom wave */}
       <div className="relative -mt-1">
         <svg
-          viewBox="0 0 1440 30"
+          viewBox="0 0 1440 80"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-[8px] md:h-[16px]"
+          className="w-full h-[40px] md:h-[80px]"
           preserveAspectRatio="none"
         >
           <path
-            d="M0,0 C240,20 480,5 720,15 C960,25 1200,10 1440,20 L1440,0 L0,0 Z"
+            d="M0,0 C360,80 720,10 1080,70 C1260,80 1380,50 1440,60 L1440,0 L0,0 Z"
             fill="hsl(var(--hero-accent))"
           />
         </svg>
