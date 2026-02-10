@@ -152,7 +152,8 @@ Custom domains can be configured directly through the selected hosting provider.
 
 ## License
 
-Specify the applicable license for this project here.
+This project is proprietary and confidential.  
+All rights reserved © Opero MX.
 
 ---
 
