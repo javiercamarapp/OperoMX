@@ -1,73 +1,164 @@
-# Welcome to your Lovable project
+# Opero MX
 
-## Project info
+## Logistics Operating System Built for Scale
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Opero MX is a logistics technology company focused on designing, building, and deploying scalable delivery systems that help businesses operate more efficiently, reduce operational costs, and scale their daily delivery operations with confidence.
 
-## How can I edit this code?
+We combine modern software engineering, operational insight, and product-driven thinking to create reliable, production-ready logistics platforms with real business impact.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## About Opero MX
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+At Opero MX, we work at the intersection of logistics operations and practical software development.  
+Our mission is to transform complex, fragmented delivery workflows into simple, centralized, and scalable systems.
 
-Changes made via Lovable will be committed automatically to this repo.
+We partner with SMBs, growing companies, and high-volume businesses to streamline deliveries, automate coordination, and unlock operational efficiencies across industries such as retail, food & beverage, e-commerce, and last-mile logistics.
 
-**Use your preferred IDE**
+Our approach prioritizes:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+* Real-world logistics use cases over theoretical solutions  
+* Scalable architectures designed for high-volume, daily operations  
+* Reliability, performance, and operational control from day one  
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## What We Do
+
+Opero MX develops logistics platforms and operational tools, including:
+
+* Centralized delivery management dashboards  
+* On-demand courier access and coordination  
+* Real-time tracking and delivery visibility  
+* Cost control and operational analytics  
+* Scalable systems for businesses with daily shipments  
+
+From early-stage operations to mature delivery workflows, we help teams grow without increasing operational complexity or labor risk.
+
+---
+
+## How We Work
+
+Our development philosophy is built around four core principles:
+
+* **Practical** – Solutions focused on measurable operational outcomes  
+* **Scalable** – Architectures that grow with delivery volume and business demand  
+* **Reliable** – Infrastructure designed for mission-critical, daily operations  
+* **Future-ready** – Built with modern software stacks and extensible architecture  
+
+We move quickly, iterate intelligently, and deploy with confidence.
+
+---
+
+## Project Information
+
+This repository contains the source code for Opero MX’s web platform.  
+The project is built using modern web technologies and follows best practices for scalability, maintainability, and performance.
+
+**Website:**  
+https://operomx.com
+
+---
+
+## Getting Started
+
+There are multiple ways to work with this codebase, depending on your preferred workflow.
+
+---
+
+### Work Locally Using Your Preferred IDE
+
+You can clone the repository and run the project locally.
+
+**Requirements**
+
+* Node.js  
+* npm  
+  (Recommended installation via nvm: https://github.com/nvm-sh/nvm)
+
+**Setup Steps**
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Navigate to the project directory
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The development server includes hot reloading for an efficient development experience.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+### Edit Files Directly on GitHub
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+For quick changes or documentation updates:
 
-## What technologies are used for this project?
+* Navigate to the file you want to edit.
+* Click the **Edit** (pencil) icon.
+* Commit your changes directly to the repository.
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Use GitHub Codespaces
 
-## How can I deploy this project?
+GitHub Codespaces allows you to work in a cloud-based development environment without local setup.
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+* Open the repository main page.
+* Click **Code** → **Codespaces**.
+* Select **New codespace**.
+* Edit, commit, and push changes directly from the browser.
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## Technology Stack
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+This project is built using the following technologies:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+* **Vite**  
+* **TypeScript**  
+* **React**  
+* **Tailwind CSS**  
+* **shadcn/ui**  
+* Cloud-native infrastructure  
+* API-first architectures  
+
+---
+
+## Build & Deployment
+
+To generate a production-ready build:
+
+```sh
+npm run build
+```
+
+The output will be generated in the `dist` directory and can be deployed on any modern hosting or cloud infrastructure provider.
+
+---
+
+## Custom Domain & Hosting
+
+This project supports deployment on any platform that supports modern frontend frameworks.  
+Custom domains can be configured directly through the selected hosting provider.
+
+---
+
+## License
+
+Specify the applicable license for this project here.
+
+---
+
+## Contact
+
+If you are interested in working with Opero MX or learning more about our logistics platform:
+
+**Email:** hello@operomx.com  
+**Website:** https://operomx.com
