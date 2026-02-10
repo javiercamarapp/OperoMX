@@ -10,7 +10,7 @@ export function PricingSection() {
       <div className="mx-auto max-w-6xl bg-hero-accent rounded-3xl px-8 py-10 md:px-12 md:py-14 lg:px-16 lg:py-16 shadow-2xl">
         <div className="flex flex-col items-center gap-4 text-center">
           <div>
-            <Badge variant="outline" className="border-white/30 text-white/90 bg-white/10">
+            <Badge variant="outline" className="border-white/30 text-white/90 bg-white/10 text-base px-5 py-1">
               Precio
             </Badge>
           </div>
